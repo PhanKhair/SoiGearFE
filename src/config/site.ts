@@ -6,7 +6,7 @@ export const siteConfig = {
   ],
   footerItems: [
     {
-      title: "Moncati",
+      title: "SoiGear",
       links: [
         { label: "Home", href: "/home" },
         { label: "About Us", href: "/about" },

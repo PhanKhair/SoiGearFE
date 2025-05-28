@@ -64,7 +64,7 @@ function Header() {
       </header>
 
       <header className="hidden xl:block bg-white py-4 drop-shadow-sm">
-        <div className="px-52 flex items-center justify-between">
+        <div className="px-36 flex items-center justify-between">
           <Link
             to="/home"
             className="text-2xl font-bold text-black flex items-center gap-4"

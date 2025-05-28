@@ -1,0 +1,95 @@
+import { ProductType } from "@/schemas/productSchema";
+
+export const sampleProductSale: ProductType[] = [
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "GEONWORKS F1-722",
+    oldPrice: 11300000,
+    newPrice: 7910000,
+    discount: 30,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+      "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+    ],
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Dune 65",
+    oldPrice: 9800000,
+    newPrice: 8820000,
+    discount: 10,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://i.shgcdn.com/bc6c3a4f-81bb-4343-8d7d-39ada146514a/-/format/auto/-/preview/3000x3000/-/quality/best/",
+      "https://i.shgcdn.com/2395213a-7138-4c84-b73f-88665413d216/-/format/auto/-/preview/3000x3000/-/quality/best/",
+    ],
+    rating: { totalRating: 11, averageRating: 4.7 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Qk 60",
+    oldPrice: 5300000,
+    newPrice: 4505000,
+    discount: 15,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://cdn.store-assets.com/s/402514/f/9356804.jpeg",
+      "https://cdn.candykeys.com/public/10476/conversions/5-webp.webp",
+    ],
+    rating: { totalRating: 20, averageRating: 4.2 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Cycle 7",
+    oldPrice: 4240000,
+    newPrice: 4028000,
+    discount: 5,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://i.imgur.com/eaDr77s.jpg",
+      "https://i.imgur.com/8tDek7S.jpg",
+    ],
+    rating: { totalRating: 34, averageRating: 3.7 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Zoom 65 V3",
+    oldPrice: 3225000,
+    newPrice: 2999250,
+    discount: 7,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://keebsforall.com/cdn/shop/files/Zoom65v3_NoTailLight_Black.webp?v=1719510457",
+      "https://prototypist.net/cdn/shop/files/Zoom65v3_Accent_On.png?v=1718201570&width=1920",
+    ],
+    rating: { totalRating: 29, averageRating: 4.2 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Neo 80 TKL",
+    oldPrice: 5323000,
+    newPrice: 4684240,
+    discount: 12,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/550c85e3-55d9-4802-9c98-e8c1a3845ddb_rw_1920.jpg?h=733346282d51c9ff4a730f5701f169d6",
+      "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/505a40ea-3a8b-4cd9-84f3-ffc2e1f0bc70_rw_1920.jpg?h=e2eb33f682da38ffdc122287c8bdda0f",
+    ],
+    rating: { totalRating: 31, averageRating: 4.2 },
+  },
+  {
+    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    name: "Cruel World CW88",
+    oldPrice: 22390000,
+    newPrice: 18583700,
+    discount: 17,
+    description: "ashdkajshdkjahsdkjahsdkjh",
+    images: [
+      "https://bizweb.dktcdn.net/100/499/624/files/z4654940921303-3dbf1cd83c44a61a6270f66535262165.jpg?v=1713792120135",
+      "https://bizweb.dktcdn.net/100/499/624/files/z4654940935310-3d50f05eddf02e91fff96ab4044baab3.jpg?v=1713792123191",
+    ],
+    rating: { totalRating: 120, averageRating: 4.2 },
+  },
+];

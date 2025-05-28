@@ -165,7 +165,7 @@ function NavHome({ className }: NavHomeProp) {
           <Carousel
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 2200,
               }),
             ]}
           >
@@ -176,7 +176,7 @@ function NavHome({ className }: NavHomeProp) {
                     <img
                       src={imageUrl}
                       alt={`img-${index}`}
-                      className="rounded-lg w-full h-full"
+                      className="rounded-lg w-full h-full object-fill"
                     />
                   </div>
                 </CarouselItem>
