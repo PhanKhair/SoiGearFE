@@ -86,6 +86,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       setUser(userInfo);
       setIsAuthenticated(true);
     } catch (err) {
+      console.error("Login error:", err);
       setError("Đăng nhập thất bại");
     } finally {
       setLoading(false);
