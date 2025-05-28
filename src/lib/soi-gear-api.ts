@@ -1,8 +1,9 @@
 import { IRefreshTokenResponse } from "@/contexts/AuthContext";
 import axios from "axios";
 
-const apiUrl = import.meta.env.VITE_REACT_PUBLIC_API_URL || "";
-const apiVersion = import.meta.env.VITE_REACT_PUBLIC_API_VERSION || "";
+const apiUrl =
+  import.meta.env.VITE_REACT_PUBLIC_API_URL || "http://localhost:8080";
+const apiVersion = import.meta.env.VITE_REACT_PUBLIC_API_VERSION || "api/v1";
 
 const soiGearAPI = axios.create({
   baseURL: `${apiUrl}/${apiVersion}`,
