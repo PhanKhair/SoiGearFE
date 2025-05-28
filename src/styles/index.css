@@ -119,5 +119,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Montserrat", sans-serif;
+    overflow-y: scroll !important;
   }
 }
