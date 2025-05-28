@@ -5,15 +5,15 @@ import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import { Label } from "@/components/globals/atoms/label";
 import { Input } from "@/components/globals/atoms/input";
-import {
-  createContactSchema,
-  CreateContactType,
-} from "@/schemas/contactSchema";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/globals/atoms/textarea";
 import { Button } from "@/components/globals/atoms/button";
+import {
+  createContactSchema,
+  CreateContactType,
+} from "@/schemas/contactSchema";
 
 function ContactPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
