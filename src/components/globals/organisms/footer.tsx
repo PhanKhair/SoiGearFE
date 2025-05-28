@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="mt-40 bg-primary">
+    <div className="bg-primary mt-40">
       <div className="container mx-auto p-0 md:p-8 xl:px-0">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mt-16 xl:grid xl:grid-cols-4 xl:gap-8">
@@ -26,7 +26,7 @@ function Footer() {
             ))}
           </div>
           <div className="mt-16 border-t border-gray-400/30 pt-8 sm:mt-20 lg:mt-24">
-            <div className="text-center text-card">
+            <div className="text-card text-center">
               &copy; 2025 SoiGear. All rights reserved.
             </div>
           </div>

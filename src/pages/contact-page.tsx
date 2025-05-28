@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Label } from "@/components/globals/atoms/label";
 import { Input } from "@/components/globals/atoms/input";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/globals/atoms/textarea";
 import { Button } from "@/components/globals/atoms/button";
@@ -14,6 +13,7 @@ import {
   createContactSchema,
   CreateContactType,
 } from "@/schemas/contactSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 function ContactPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -43,12 +43,12 @@ function ContactPage() {
   };
 
   return (
-    <div className="grid grid-cols-2 xl:grid-cols-3 gap-10">
+    <div className="grid grid-cols-2 gap-10 xl:grid-cols-3">
       <div className="col-span-2 xl:col-span-1">
         <Card className="px-6">
-          <div className="space-y-4 pb-4 border-b">
+          <div className="space-y-4 border-b pb-4">
             <div className="flex items-center gap-4">
-              <div className="bg-secondary p-2 rounded-full">
+              <div className="bg-secondary rounded-full p-2">
                 <Phone size={20} />
               </div>
 
@@ -59,9 +59,9 @@ function ContactPage() {
             <p>Phone: 0963 122 758</p>
           </div>
 
-          <div className="space-y-4 pb-4  border-b">
+          <div className="space-y-4 border-b pb-4">
             <div className="flex items-center gap-4">
-              <div className="bg-secondary p-2 rounded-full">
+              <div className="bg-secondary rounded-full p-2">
                 <Mail size={20} />
               </div>
 
@@ -78,7 +78,7 @@ function ContactPage() {
       <div className="col-span-2">
         <Card className="px-6">
           <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-3 xl:col-span-1 space-y-2">
+            <div className="col-span-3 space-y-2 xl:col-span-1">
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
@@ -94,7 +94,7 @@ function ContactPage() {
               )}
             </div>
 
-            <div className="col-span-3 xl:col-span-1 space-y-2">
+            <div className="col-span-3 space-y-2 xl:col-span-1">
               <Label htmlFor="phoneNumber">Phone</Label>
               <Input
                 id="phoneNumber"
@@ -110,7 +110,7 @@ function ContactPage() {
               )}
             </div>
 
-            <div className="col-span-3 xl:col-span-1 space-y-2">
+            <div className="col-span-3 space-y-2 xl:col-span-1">
               <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
@@ -127,7 +127,7 @@ function ContactPage() {
             </div>
           </div>
 
-          <div className="space-y-2 w-full">
+          <div className="w-full space-y-2">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"

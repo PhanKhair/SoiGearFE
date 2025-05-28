@@ -130,11 +130,11 @@ function NavHome({ className }: NavHomeProp) {
   return (
     <div className={className}>
       <div className="relative grid grid-cols-4 gap-10">
-        <div className="col-span-4 xl:col-span-1 space-y-8" ref={menuRef}>
+        <div className="col-span-4 space-y-8 xl:col-span-1" ref={menuRef}>
           {navItems.map(({ title, links }) => (
             <div
               key={title}
-              className="relative flex justify-between items-center hover:cursor-pointer"
+              className="relative flex items-center justify-between hover:cursor-pointer"
               onMouseEnter={!isMobile ? () => handleOpen(title) : undefined}
               onClick={isMobile ? () => handleOpen(title) : undefined}
               onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
@@ -144,12 +144,12 @@ function NavHome({ className }: NavHomeProp) {
 
               {/* MENU SUB */}
               {isOpen && navOpen === title && (
-                <div className="absolute xl:top-0 xl:left-full z-50 bottom-1 top-5 right-8">
-                  <Card className="p-4 space-y-2 w-48">
+                <div className="absolute top-5 right-8 bottom-1 z-50 xl:top-0 xl:left-full">
+                  <Card className="w-48 space-y-2 p-4">
                     {links.map((link) => (
                       <p
                         key={link.label}
-                        className="text-sm hover:text-primary cursor-pointer hover:underline"
+                        className="hover:text-primary cursor-pointer text-sm hover:underline"
                       >
                         {link.label}
                       </p>
@@ -161,7 +161,7 @@ function NavHome({ className }: NavHomeProp) {
           ))}
         </div>
 
-        <div className="col-span-4 xl:col-span-3 relative z-10">
+        <div className="relative z-10 col-span-4 xl:col-span-3">
           <Carousel
             plugins={[
               Autoplay({
@@ -172,11 +172,11 @@ function NavHome({ className }: NavHomeProp) {
             <CarouselContent>
               {images.map((imageUrl, index) => (
                 <CarouselItem key={index}>
-                  <div className="flex items-center justify-center h-[500px] hover:cursor-pointer">
+                  <div className="flex h-[500px] items-center justify-center hover:cursor-pointer">
                     <img
                       src={imageUrl}
                       alt={`img-${index}`}
-                      className="rounded-lg w-full h-full object-fill"
+                      className="h-full w-full rounded-lg object-cover xl:object-fill"
                     />
                   </div>
                 </CarouselItem>
