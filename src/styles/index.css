@@ -122,5 +122,11 @@
     @apply bg-background text-foreground;
     font-family: "Montserrat", sans-serif;
     overflow-y: scroll !important;
+    overflow-x: hidden;
+    padding-right: 0px !important;
+  }
+
+  body[data-scroll-locked] {
+    margin-right: 0px !important;
   }
 }

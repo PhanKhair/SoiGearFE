@@ -19,4 +19,13 @@ export const reviewSchema = z.object({
   ...timestampFields,
 });
 
+export const ratingProductSchema = z.object({
+  totalRating: z
+    .number()
+    .min(0, { message: "Total rating must be 0 or greater" }),
+  averageRating: z
+    .number()
+    .min(0, { message: "Average rating must be 0 or greater" }),
+});
+
 export type ReviewType = z.infer<typeof reviewSchema>;

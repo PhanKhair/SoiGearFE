@@ -1,4 +1,4 @@
-import { KeyboardType } from "@/schemas/keyboardSchema";
+import { KeycapType } from "@/schemas/keycapSchema";
 import { formatCurrencyVND } from "@/utils/formatter";
 import { Heart } from "lucide-react";
 import { useState } from "react";
@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import RatingStars from "./render-stars";
 
-interface keyboardCardProps {
-  data: KeyboardType;
+interface keycapCardProps {
+  data: KeycapType;
 }
 
-function KeyboardCard({ data }: keyboardCardProps) {
+function KeycapCard({ data }: keycapCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleFavorite = () => {
@@ -29,7 +29,7 @@ function KeyboardCard({ data }: keyboardCardProps) {
   return (
     <div className="flex flex-col">
       <div className="relative h-60 overflow-hidden rounded-md select-none hover:cursor-pointer">
-        <Link to={`/keyboards/${data.keyboardId}`}>
+        <Link to={`/keycaps/${data.keycapId}`}>
           <img
             src={data.images[0]}
             alt="product"
@@ -60,7 +60,7 @@ function KeyboardCard({ data }: keyboardCardProps) {
         </Link>
       </div>
 
-      <Link to={`/keyboards/${data.keyboardId}`} className="mt-4 w-fit">
+      <Link to={`/keycaps/${data.keycapId}`} className="mt-4 w-fit">
         <span className="hover:text-o-primary font-medium uppercase duration-300 hover:cursor-pointer">
           {data.name}
         </span>
@@ -87,4 +87,4 @@ function KeyboardCard({ data }: keyboardCardProps) {
   );
 }
 
-export default KeyboardCard;
+export default KeycapCard;

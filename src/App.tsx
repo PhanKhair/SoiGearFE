@@ -10,8 +10,10 @@ function App() {
   const Contact = lazy(() => import("./pages/contact-page"));
   const About = lazy(() => import("./pages/about-page"));
 
+  const KeyboardDetail = lazy(() => import("./pages/keyboard-detail-page"));
+  const KeycapDetail = lazy(() => import("./pages/keycap-detail-page"));
+
   const Login = lazy(() => import("./pages/login-page"));
-  const Register = lazy(() => import("./pages/register-page"));
 
   return (
     <Suspense fallback={<LoadingPage />}>
@@ -22,10 +24,12 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+
+          <Route path="/keyboards/:keyboardId" element={<KeyboardDetail />} />
+          <Route path="/keycaps/:keycapId" element={<KeycapDetail />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
       </Routes>
     </Suspense>
   );

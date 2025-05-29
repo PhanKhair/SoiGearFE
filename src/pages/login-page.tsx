@@ -186,7 +186,7 @@ function LoginPage() {
                   type="submit"
                   disabled={isLoading}
                   size="lg"
-                  className="mt-2 w-full"
+                  className="mt-2 w-full hover:cursor-pointer"
                 >
                   {isLoading ? "Loading..." : "Login"}
                 </Button>
@@ -295,7 +295,7 @@ function LoginPage() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="mt-2 w-full"
+                  className="mt-2 w-full hover:cursor-pointer"
                 >
                   {isLoading ? "Loading..." : "Register"}
                 </Button>

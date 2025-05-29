@@ -1,14 +1,7 @@
 import { z } from "zod";
 import { uuidSchema } from "./baseSchema";
-
-const ratingProductSchema = z.object({
-  totalRating: z
-    .number()
-    .min(0, { message: "Total rating must be 0 or greater" }),
-  averageRating: z
-    .number()
-    .min(0, { message: "Average rating must be 0 or greater" }),
-});
+import { ratingProductSchema } from "./reviewSchema";
+import { StatusSchemaEnum } from "@/constants/enum/Status";
 
 export const keyboardSchema = z.object({
   keyboardId: uuidSchema,
@@ -32,6 +25,8 @@ export const keyboardSchema = z.object({
     .nonempty({ message: "Description must not be empty" })
     .min(10, { message: "Description must be at least 10 characters long" }),
   images: z.array(z.string()),
+
+  status: StatusSchemaEnum,
 
   rating: ratingProductSchema,
 });

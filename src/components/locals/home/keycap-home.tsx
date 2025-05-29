@@ -4,21 +4,21 @@ import {
   CarouselItem,
 } from "@/components/globals/atoms/carousel";
 import Tag from "@/components/globals/atoms/tag";
-import KeyboardCard from "@/components/globals/molecules/keyboard-card";
-import { sampleKeyboardData } from "@/constants/data/keyboard";
+import KeycapCard from "@/components/globals/molecules/keycap-card";
+import { sampleKeycapData } from "@/constants/data/keycap";
 import Autoplay from "embla-carousel-autoplay";
 
-interface keyboardHomeProps {
+interface keycapHomeProps {
   className?: string;
 }
 
-function KeyboardHome({ className }: keyboardHomeProps) {
-  const data = sampleKeyboardData;
+function KeycapHome({ className }: keycapHomeProps) {
+  const data = sampleKeycapData;
 
   return (
     <div className={className}>
       <div className="space-y-6">
-        <Tag label="Keyboard's" variant="more" />
+        <Tag label="Keycap's" variant="more" />
         <Carousel
           className="w-full"
           plugins={[
@@ -33,7 +33,7 @@ function KeyboardHome({ className }: keyboardHomeProps) {
                 key={index}
                 className="basis-1/1 md:basis-1/3 xl:basis-1/5"
               >
-                <KeyboardCard data={product} />
+                <KeycapCard data={product} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -43,4 +43,4 @@ function KeyboardHome({ className }: keyboardHomeProps) {
   );
 }
 
-export default KeyboardHome;
+export default KeycapHome;

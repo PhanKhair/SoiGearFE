@@ -1,0 +1,90 @@
+import { KeycapType } from "@/schemas/keycapSchema";
+import { StatusEnum } from "../enum/Status";
+
+export const sampleKeycapData: KeycapType[] = [
+  {
+    keycapId: "gmk-klassiker",
+    name: "GMK CYL Klassiker",
+    oldPrice: 3600000,
+    newPrice: 3090000,
+    discount: 14,
+    description: "Bộ keycap phong cách cổ điển với profile CYL.",
+    images: [
+      "https://www.deskhero.ca/cdn/shop/files/gmk_klassiker_no160_02_2048x2048_1ab01e05-33a8-4459-9182-3e9b129c9be1.jpg?crop=center&height=1200&v=1709929887&width=1200",
+      "https://omnitype.com/cdn/shop/products/gmk_klassiker_no160_03.png?v=1691624488",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    keycapId: "cmk-darling",
+    name: "CMK CYL Darling R2",
+    oldPrice: 3700000,
+    newPrice: 3350000,
+    discount: 9,
+    description:
+      "Thiết kế nổi bật màu hồng cá tính dành cho người yêu phong cách anime.",
+    images: [
+      "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Atom_HHKB_590x.jpg?v=1727517440",
+      "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Atom_HHKB_2_590x.jpg?v=1727517440",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    keycapId: "gmk-olivia",
+    name: "GMK CYL OLIVIA",
+    oldPrice: 4100000,
+    newPrice: 3490000,
+    discount: 15,
+    description: "GMK nổi tiếng với phối màu OLIVIA dịu dàng, sang trọng.",
+    images: [
+      "https://novelkeys.com/cdn/shop/files/GMK_CYL_OliviaNo3_16x9-1_3000x.jpg?v=1701457064",
+      "https://novelkeys.com/cdn/shop/files/GMK_CYL_OliviaNo3_16x9-3_1512x.jpg?v=1701457064",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    keycapId: "gmk-shoko",
+    name: "GMK Shoko R2",
+    oldPrice: 3950000,
+    newPrice: 2950000,
+    discount: 25,
+    description: "Màu xanh baby huyền thoại, nhẹ nhàng nhưng đầy cá tính.",
+    images: [
+      "https://ilumkb.com/cdn/shop/files/Alice_Wide.jpg?v=1713068745&width=800",
+      "https://ilumkb.com/cdn/shop/products/Alice_Angle_f33526f6-718d-4d32-9ff5-27a92c5f9c5b.jpg?v=1713068745&width=800",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    keycapId: "gmk-motif",
+    name: "GMK CYL MOTIF",
+    oldPrice: 3990000,
+    newPrice: 3390000,
+    discount: 15,
+    description: "Thiết kế tối giản đầy tinh tế với phối màu cổ điển.",
+    images: [
+      "https://ilumkb.com/cdn/shop/files/GMK_CYL_Motif_Classic_TGR_Alice_Wide.png?v=1738987736&width=800",
+      "https://ilumkb.com/cdn/shop/files/GMK_CYL_Motif_Classic_TGR_Alice_CU.png?v=1738987736&width=800",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+  {
+    keycapId: "gmk-prussian-blue",
+    name: "GMK CYL Prussian Blue",
+    oldPrice: 4300000,
+    newPrice: 3690000,
+    discount: 14,
+    description: "Tone xanh hoàng gia mạnh mẽ và nam tính.",
+    images: [
+      "https://ilumkb.com/cdn/shop/files/GMKPrussianBlue_RippleTKL_View02_5400K_d01940b4-4657-4fab-8692-08e6d7900053.jpg?v=1742576073&width=800",
+      "https://ilumkb.com/cdn/shop/files/GMKPrussianBlue_RippleTKL_View01_5400K_8e28a555-a524-41ff-afde-2e3a32b235cd.jpg?v=1742576073&width=800",
+    ],
+    status: StatusEnum.InComing,
+    rating: { totalRating: 120, averageRating: 4.5 },
+  },
+];
