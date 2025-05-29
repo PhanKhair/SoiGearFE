@@ -8,7 +8,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 11300000,
     newPrice: 7910000,
     discount: 30,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ cao cấp GEONWORKS F1-722 với thiết kế layout 65% + F-row độc đáo. Sở hữu case nhôm CNC chất lượng cao, gasket mount system mang lại cảm giác gõ mượt mà và âm thanh premium. Hỗ trợ hotswap PCB, RGB underglow.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
       "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
@@ -28,7 +30,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 9800000,
     newPrice: 8820000,
     discount: 10,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ Dune 65 với thiết kế 65% compact và elegant. Được chế tác từ nhôm anodized cao cấp với nhiều lựa chọn màu sắc độc đáo. Tích hợp gasket mount structure cho trải nghiệm typing êm ái, PCB hotswap hỗ trợ 3-pin và 5-pin switches.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://i.shgcdn.com/bc6c3a4f-81bb-4343-8d7d-39ada146514a/-/format/auto/-/preview/3000x3000/-/quality/best/",
       "https://i.shgcdn.com/2395213a-7138-4c84-b73f-88665413d216/-/format/auto/-/preview/3000x3000/-/quality/best/",
@@ -40,11 +44,13 @@ export const sampleKeyboardData: KeyboardType[] = [
   },
   {
     keyboardId: "b62e8f69-c3e6-4dd3-bdf2-5c357363ee2a",
-    name: "Qk 60",
+    name: "Qk 65",
     oldPrice: 5300000,
     newPrice: 4505000,
     discount: 15,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ QK65 - sự lựa chọn hoàn hảo cho người mới bắt đầu với budget hợp lý. Thiết kế 65% với top mount structure, case nhôm CNC chắc chắn và đa dạng màu sắc. PCB hỗ trợ hotswap, VIA/QMK compatible và USB-C connectivity.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://cdn.store-assets.com/s/402514/f/9356804.jpeg",
       "https://cdn.candykeys.com/public/10476/conversions/5-webp.webp",
@@ -62,7 +68,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 4240000,
     newPrice: 4028000,
     discount: 5,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ Cycle 7 với thiết kế 65% minimalist và tinh tế. Sở hữu unique mounting system kết hợp giữa top mount và gasket mount, mang lại flex pattern độc đáo. Case được gia công từ nhôm 6061 với finish matte premium. PCB support rotary encoder, hotswap switches và RGB per-key.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://i.imgur.com/eaDr77s.jpg",
       "https://i.imgur.com/8tDek7S.jpg",
@@ -79,7 +87,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 3225000,
     newPrice: 2999250,
     discount: 7,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ Zoom 65 V3 - phiên bản nâng cấp với innovative features. Nổi bật với accent LED strip và optional tail light system tạo điểm nhấn thẩm mỹ. Gasket mount design với improved flex cuts, hotswap PCB hỗ trợ southfacing switches.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://keebsforall.com/cdn/shop/files/Zoom65v3_NoTailLight_Black.webp?v=1719510457",
       "https://prototypist.net/cdn/shop/files/Zoom65v3_Accent_On.png?v=1718201570&width=1920",
@@ -95,7 +105,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 5323000,
     newPrice: 4684240,
     discount: 12,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ Neo 80 TKL với form factor 80% (TKL - Ten Key Less) cân bằng giữa functionality và compactness. Thiết kế gasket mount system với unique badge logo, case nhôm anodized cao cấp. PCB hotswap với south-facing sockets.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/550c85e3-55d9-4802-9c98-e8c1a3845ddb_rw_1920.jpg?h=733346282d51c9ff4a730f5701f169d6",
       "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/505a40ea-3a8b-4cd9-84f3-ffc2e1f0bc70_rw_1920.jpg?h=e2eb33f682da38ffdc122287c8bdda0f",
@@ -111,7 +123,9 @@ export const sampleKeyboardData: KeyboardType[] = [
     oldPrice: 22390000,
     newPrice: 18583700,
     discount: 17,
-    description: "ashdkajshdkjahsdkjahsdkjh",
+    description:
+      "Bàn phím cơ ultra-premium Cruel World CW88 - đỉnh cao của craftsmanship và innovation. Limited edition với thiết kế TKL layout, case được gia công từ nhôm aerospace-grade với unique colorways. Tích hợp advanced gasket mount system.",
+    colors: ["#121063", "#3ab7bf", "#78dcca"],
     images: [
       "https://bizweb.dktcdn.net/100/499/624/files/z4654940921303-3dbf1cd83c44a61a6270f66535262165.jpg?v=1713792120135",
       "https://bizweb.dktcdn.net/100/499/624/files/z4654940935310-3d50f05eddf02e91fff96ab4044baab3.jpg?v=1713792123191",

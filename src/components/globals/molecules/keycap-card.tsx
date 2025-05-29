@@ -13,7 +13,10 @@ interface keycapCardProps {
 function KeycapCard({ data }: keycapCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const handleFavorite = () => {
+  const handleFavorite = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    event.preventDefault();
+
     setIsFavorite((prev) => !prev);
     toast(isFavorite ? "Removed from favorites" : "Added to favorites", {
       description: (
@@ -40,24 +43,25 @@ function KeycapCard({ data }: keycapCardProps) {
             alt="product-hover"
             className="absolute top-0 left-0 h-full w-full object-cover opacity-0 transition-opacity hover:opacity-100"
           />
-          <span className="bg-o-primary absolute top-3 left-3 rounded px-2 py-1 text-xs text-white">
-            - {data.discount}%
-          </span>
-
-          <div className="absolute top-2 right-2 rounded px-2 py-1 text-xs">
-            <div
-              className={`flex items-center justify-center rounded-full p-[5px] transition-colors hover:cursor-pointer ${
-                isFavorite ? "bg-o-primary" : "bg-secondary"
-              }`}
-              onClick={() => handleFavorite()}
-            >
-              <Heart
-                size={18}
-                className={` ${isFavorite ? "text-white" : "text-o-primary"}`}
-              />
-            </div>
-          </div>
         </Link>
+
+        <span className="bg-o-primary absolute top-3 left-3 rounded px-2 py-1 text-xs text-white">
+          - {data.discount}%
+        </span>
+
+        <div className="absolute top-2 right-2 rounded px-2 py-1 text-xs">
+          <div
+            className={`flex items-center justify-center rounded-full p-[5px] transition-colors hover:cursor-pointer ${
+              isFavorite ? "bg-o-primary" : "bg-secondary"
+            }`}
+            onClick={handleFavorite}
+          >
+            <Heart
+              size={18}
+              className={` ${isFavorite ? "text-white" : "text-o-primary"}`}
+            />
+          </div>
+        </div>
       </div>
 
       <Link to={`/keycaps/${data.keycapId}`} className="mt-4 w-fit">

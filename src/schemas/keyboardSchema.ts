@@ -24,6 +24,8 @@ export const keyboardSchema = z.object({
     .string()
     .nonempty({ message: "Description must not be empty" })
     .min(10, { message: "Description must be at least 10 characters long" }),
+
+  colors: z.array(z.string()),
   images: z.array(z.string()),
 
   status: StatusSchemaEnum,
