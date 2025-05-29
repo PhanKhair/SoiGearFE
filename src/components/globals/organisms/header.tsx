@@ -42,40 +42,129 @@ function Header() {
           <span className="text-primary">SoiGear</span>
         </Link>
 
-        <DropdownMenu modal={false}>
-          <DropdownMenuTrigger asChild>
-            <AlignJustify
-              size={32}
-              className="rounded-md border p-1 hover:cursor-pointer"
-            />
-          </DropdownMenuTrigger>
+        <div className="flex items-center gap-4">
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <div className="bg-secondary rounded-md px-2 py-1 hover:cursor-pointer">
+                <AlignJustify size={26} />
+              </div>
+            </DropdownMenuTrigger>
 
-          <DropdownMenuContent className="w-56">
-            <DropdownMenuGroup>
-              {siteConfig.navItems.map((navItem, index) => (
-                <DropdownMenuItem key={index} className="hover:cursor-pointer">
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuGroup>
+                {siteConfig.navItems.map((navItem, index) => (
                   <Link
                     to={navItem.href}
                     className={`slow font-medium duration-400 hover:text-gray-400 ${
-                      location.pathname === navItem.href ? "underline" : ""
+                      location.pathname === navItem.href
+                        ? "underline underline-offset-2"
+                        : ""
                     }`}
                   >
-                    {navItem.label}
+                    <DropdownMenuItem
+                      key={index}
+                      className="hover:cursor-pointer"
+                    >
+                      {navItem.label}
+                    </DropdownMenuItem>
                   </Link>
+                ))}
+              </DropdownMenuGroup>
+
+              <div className="px-1 py-1">
+                <Input
+                  placeholder="What are you looking for?"
+                  className="text-xs"
+                />
+              </div>
+
+              {!isAuthenticated && (
+                <>
+                  <DropdownMenuSeparator />
+
+                  <Link
+                    to="/login"
+                    className="slow font-medium duration-400 hover:text-gray-400"
+                  >
+                    <DropdownMenuItem className="hover:cursor-pointer">
+                      Login
+                    </DropdownMenuItem>
+                  </Link>
+                </>
+              )}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {isAuthenticated && (
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger asChild>
+                <div className="flex items-center gap-2 select-none hover:cursor-pointer">
+                  <Avatar>
+                    <AvatarImage src={user?.avatarUrl} alt="avatar" />
+                    <AvatarFallback>{user?.fullName}</AvatarFallback>
+                  </Avatar>
+                  <span className="text-sm font-medium">{user?.fullName}</span>
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-52">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem className="hover:cursor-pointer">
+                    Profile
+                    <DropdownMenuShortcut>
+                      <CircleUser />
+                    </DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="hover:cursor-pointer">
+                    Cart
+                    <DropdownMenuShortcut>
+                      <ShoppingCart />
+                    </DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="hover:cursor-pointer">
+                    Billing
+                    <DropdownMenuShortcut>
+                      <ReceiptText />
+                    </DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="hover:cursor-pointer">
+                    Settings
+                    <DropdownMenuShortcut>
+                      <Settings />
+                    </DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+
+                <DropdownMenuItem className="hover:cursor-pointer">
+                  Favorites
+                  <DropdownMenuShortcut>
+                    <Heart />
+                  </DropdownMenuShortcut>
                 </DropdownMenuItem>
-              ))}
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="hover:cursor-pointer">
-              <Link
-                to="/login"
-                className="slow font-medium duration-400 hover:text-gray-400"
-              >
-                Login
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+                <DropdownMenuItem className="hover:cursor-pointer">
+                  Support
+                  <DropdownMenuShortcut>
+                    <BadgeInfo />
+                  </DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+
+                <DropdownMenuItem
+                  variant="destructive"
+                  className="hover:cursor-pointer"
+                  onClick={() => logout()}
+                >
+                  Log out
+                  <DropdownMenuShortcut>
+                    <LogOut className="text-red-500" />
+                  </DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
+        </div>
       </header>
 
       <header className="hidden bg-white py-4 drop-shadow-sm xl:block">
@@ -99,7 +188,9 @@ function Header() {
                 key={index}
                 to={navItem.href}
                 className={`slow font-medium duration-400 hover:text-gray-400 ${
-                  location.pathname === navItem.href ? "underline" : ""
+                  location.pathname === navItem.href
+                    ? "underline underline-offset-2"
+                    : ""
                 }`}
               >
                 {navItem.label}
@@ -181,7 +272,11 @@ function Header() {
               </DropdownMenu>
             ) : (
               <Link to="/login">
-                <Button type="button" variant="default">
+                <Button
+                  type="button"
+                  variant="default"
+                  className="hover:cursor-pointer"
+                >
                   Login
                 </Button>
               </Link>

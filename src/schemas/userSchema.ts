@@ -19,7 +19,7 @@ export const userSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
 
   phoneNumber: z.string().regex(/^(0\d{9}|(\+84)\d{9})$/, {
-    message: "Phone number must be 10 digits and start with 0 or +84",
+    message: "Invalid phone number",
   }),
 
   password: z
@@ -69,6 +69,14 @@ export const loginUserSchema = userSchema.pick({
   password: true,
 });
 
+export const registerSchema = userSchema.pick({
+  fullName: true,
+  phoneNumber: true,
+  email: true,
+  password: true,
+});
+
 export type UserType = z.infer<typeof userSchema>;
 export type CreateUserType = z.infer<typeof createUserSchema>;
+export type RegisterType = z.infer<typeof registerSchema>;
 export type LoginUserType = z.infer<typeof loginUserSchema>;

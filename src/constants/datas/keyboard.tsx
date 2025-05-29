@@ -1,8 +1,8 @@
-import { ProductType } from "@/schemas/productSchema";
+import { KeyboardType } from "@/schemas/productSchema";
 
-export const sampleProductSale: ProductType[] = [
+export const sampleKeyboardData: KeyboardType[] = [
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "GEONWORKS F1-722",
     oldPrice: 11300000,
     newPrice: 7910000,
@@ -15,7 +15,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Dune 65",
     oldPrice: 9800000,
     newPrice: 8820000,
@@ -28,7 +28,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 11, averageRating: 4.7 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Qk 60",
     oldPrice: 5300000,
     newPrice: 4505000,
@@ -41,7 +41,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 20, averageRating: 4.2 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Cycle 7",
     oldPrice: 4240000,
     newPrice: 4028000,
@@ -54,7 +54,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 34, averageRating: 3.7 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Zoom 65 V3",
     oldPrice: 3225000,
     newPrice: 2999250,
@@ -67,7 +67,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 29, averageRating: 4.2 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Neo 80 TKL",
     oldPrice: 5323000,
     newPrice: 4684240,
@@ -80,7 +80,7 @@ export const sampleProductSale: ProductType[] = [
     rating: { totalRating: 31, averageRating: 4.2 },
   },
   {
-    productId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
+    keyboardId: "05ffb24e-2a8b-44bd-9103-cbdd28ddfc37",
     name: "Cruel World CW88",
     oldPrice: 22390000,
     newPrice: 18583700,

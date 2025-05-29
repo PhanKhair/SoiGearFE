@@ -1,4 +1,4 @@
-import soiGearAPI from "@/lib/soi-gear-api";
+import soiGearAPI from "@/lib/soiGearApi";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export interface IAuthResponseData {
@@ -82,7 +82,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("refreshToken", refreshToken);
 
-      const userInfo = await fetchUserInfo(); // 👈 gọi API /auth/me
+      const userInfo = await fetchUserInfo();
       setUser(userInfo);
       setIsAuthenticated(true);
     } catch (err) {

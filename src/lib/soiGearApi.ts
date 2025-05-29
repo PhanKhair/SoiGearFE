@@ -66,7 +66,7 @@ soiGearAPI.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshToken");
 
         const res = await soiGearAPI.post<IRefreshTokenResponse>(
-          "/auth/refresh-token", // đường dẫn đã đúng theo ảnh
+          "/auth/refresh-token",
           {
             accessToken,
             refreshToken,

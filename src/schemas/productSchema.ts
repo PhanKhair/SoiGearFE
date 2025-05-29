@@ -10,8 +10,8 @@ const ratingProductSchema = z.object({
     .min(0, { message: "Average rating must be 0 or greater" }),
 });
 
-export const productSchema = z.object({
-  productId: uuidSchema,
+export const keyboardSchema = z.object({
+  keyboardId: uuidSchema,
 
   name: z
     .string()
@@ -36,4 +36,4 @@ export const productSchema = z.object({
   rating: ratingProductSchema,
 });
 
-export type ProductType = z.infer<typeof productSchema>;
+export type KeyboardType = z.infer<typeof keyboardSchema>;

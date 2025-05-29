@@ -105,6 +105,24 @@ function NavHome({ className }: NavHomeProp) {
 
   const [isOpen, setIsOpen] = useState(false);
   const [navOpen, setNavOpen] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleOpen = (title: string) => {
+    setNavOpen(title);
+    setIsOpen(true);
+  };
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 1280);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -120,39 +138,33 @@ function NavHome({ className }: NavHomeProp) {
     };
   }, []);
 
-  const handleOpen = (title: string) => {
-    setNavOpen(title);
-    setIsOpen(true);
-  };
-
-  const isMobile = window.innerWidth < 1280;
-
   return (
     <div className={className}>
       <div className="relative grid grid-cols-4 gap-10">
-        <div className="col-span-4 space-y-8 xl:col-span-1" ref={menuRef}>
+        <div className="col-span-4 space-y-4 xl:col-span-1" ref={menuRef}>
           {navItems.map(({ title, links }) => (
             <div
               key={title}
-              className="relative flex items-center justify-between hover:cursor-pointer"
+              className="relative transition-all duration-200 xl:ease-in-out xl:hover:z-60 xl:hover:scale-110"
               onMouseEnter={!isMobile ? () => handleOpen(title) : undefined}
               onClick={isMobile ? () => handleOpen(title) : undefined}
               onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
             >
-              <p className="font-medium">{title}</p>
-              <ChevronRight size={20} className="text-primary" />
-
+              <div className="relative z-10 flex items-center justify-between border-b pb-4 hover:cursor-pointer">
+                <p className="font-medium">{title}</p>
+                <ChevronRight size={20} className="text-primary" />
+              </div>
               {/* MENU SUB */}
               {isOpen && navOpen === title && (
-                <div className="absolute top-5 right-8 bottom-1 z-50 xl:top-0 xl:left-full">
-                  <Card className="w-48 space-y-2 p-4">
+                <div className="absolute top-5 right-0 bottom-1 z-50 xl:top-0 xl:left-full">
+                  <Card className="w-64 gap-2 space-y-0 px-4 py-2">
                     {links.map((link) => (
-                      <p
+                      <span
                         key={link.label}
-                        className="hover:text-primary cursor-pointer text-sm hover:underline"
+                        className="hover:text-primary hover:bg-secondary cursor-pointer rounded-lg px-4 py-2 text-sm underline-offset-2 transition-all ease-in-out hover:scale-105 hover:font-medium hover:underline"
                       >
                         {link.label}
-                      </p>
+                      </span>
                     ))}
                   </Card>
                 </div>
@@ -176,7 +188,7 @@ function NavHome({ className }: NavHomeProp) {
                     <img
                       src={imageUrl}
                       alt={`img-${index}`}
-                      className="h-full w-full rounded-lg object-cover xl:object-fill"
+                      className="h-full w-full rounded-lg object-cover select-none xl:object-fill"
                     />
                   </div>
                 </CarouselItem>

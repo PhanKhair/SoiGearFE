@@ -4,21 +4,21 @@ import {
   CarouselItem,
 } from "@/components/globals/atoms/carousel";
 import Tag from "@/components/globals/atoms/tag";
-import ProductCard from "@/components/globals/molecules/product-card";
-import { sampleProductSale } from "@/constants/datas/product-sales";
+import KeyboardCard from "@/components/globals/molecules/keyboard-card";
+import { sampleKeyboardData } from "@/constants/datas/keyboard";
 import Autoplay from "embla-carousel-autoplay";
 
-interface todayHomeProps {
+interface keyboardHomeProps {
   className?: string;
 }
 
-function TodayHome({ className }: todayHomeProps) {
-  const data = sampleProductSale;
+function KeyboardHome({ className }: keyboardHomeProps) {
+  const data = sampleKeyboardData;
 
   return (
     <div className={className}>
       <div className="space-y-6">
-        <Tag label="Today's" />
+        <Tag label="Keyboard's" variant="more" />
         <Carousel
           className="w-full"
           plugins={[
@@ -31,9 +31,9 @@ function TodayHome({ className }: todayHomeProps) {
             {data.map((product, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 md:basis-1/3 xl:basis-1/5"
+                className="basis-1/1 md:basis-1/3 xl:basis-1/5"
               >
-                <ProductCard data={product} />
+                <KeyboardCard data={product} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -43,4 +43,4 @@ function TodayHome({ className }: todayHomeProps) {
   );
 }
 
-export default TodayHome;
+export default KeyboardHome;
