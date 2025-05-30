@@ -1,10 +1,13 @@
 import { KeyboardType } from "@/schemas/keyboardSchema";
 import { formatCurrencyVND } from "@/utils/formatter";
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "sonner";
 import RatingStars from "./render-stars";
+import {
+  addKeyboardToFavorite,
+  isKeyboardInFavorite,
+} from "@/contexts/FavoriteContext";
 
 interface keyboardCardProps {
   data: KeyboardType;
@@ -13,20 +16,44 @@ interface keyboardCardProps {
 function KeyboardCard({ data }: keyboardCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
+  useEffect(() => {
+    if (data?.keyboardId) {
+      setIsFavorite(isKeyboardInFavorite(data.keyboardId));
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "favoriteChanged" && event.newValue === "true") {
+        if (data?.keyboardId) {
+          setIsFavorite(isKeyboardInFavorite(data.keyboardId));
+        }
+        localStorage.setItem("favoriteChanged", "false");
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+
+    if (
+      localStorage.getItem("favoriteChanged") === "true" &&
+      data?.keyboardId
+    ) {
+      setIsFavorite(isKeyboardInFavorite(data.keyboardId));
+      localStorage.setItem("favoriteChanged", "false");
+    }
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, [data]);
+
   const handleFavorite = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
+    if (!data?.keyboardId) return;
 
-    setIsFavorite((prev) => !prev);
-    toast(isFavorite ? "Removed from favorites" : "Added to favorites", {
-      description: (
-        <span className="text-gray-500">
-          {isFavorite
-            ? "Product removed from your list."
-            : "Product added to your list."}
-        </span>
-      ),
-    });
+    addKeyboardToFavorite(data.keyboardId);
+    setIsFavorite(isKeyboardInFavorite(data.keyboardId));
   };
 
   return (

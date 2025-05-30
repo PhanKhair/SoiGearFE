@@ -71,6 +71,23 @@ function Header() {
                 ))}
               </DropdownMenuGroup>
 
+              <DropdownMenuSeparator />
+
+              <DropdownMenuGroup>
+                <Link
+                  to="favorite"
+                  className={`slow font-medium duration-400 hover:text-gray-400 ${
+                    location.pathname === "/favorite"
+                      ? "underline underline-offset-2"
+                      : ""
+                  }`}
+                >
+                  <DropdownMenuItem className="hover:cursor-pointer">
+                    My Favorite
+                  </DropdownMenuItem>
+                </Link>
+              </DropdownMenuGroup>
+
               <div className="px-1 py-1">
                 <Input
                   placeholder="What are you looking for?"
@@ -198,8 +215,15 @@ function Header() {
             ))}
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <Input placeholder="What are you looking for?" size={25} />
+
+            <Link to="favorite">
+              <div className="flex h-full items-center justify-center rounded-md border px-2 py-2 hover:cursor-pointer">
+                <Heart size={20} className="text-o-primary" />
+              </div>
+            </Link>
+
             {isAuthenticated ? (
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>

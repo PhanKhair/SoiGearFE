@@ -34,8 +34,6 @@ function KeyboardDetailPage() {
     setSelectedColor(color);
   };
 
-  console.log("hehe", selectedColor);
-
   return (
     <div className="space-y-10">
       <Breadcrumb data={breadcrumb} />
@@ -47,6 +45,7 @@ function KeyboardDetailPage() {
         />
 
         <InformationDetail
+          variant="keyboard"
           keyboard={keyboard}
           className="col-span-2 xl:col-span-1"
           selectedColor={selectedColor}

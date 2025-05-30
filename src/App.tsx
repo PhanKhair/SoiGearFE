@@ -9,6 +9,7 @@ function App() {
   const Home = lazy(() => import("./pages/home-page"));
   const Contact = lazy(() => import("./pages/contact-page"));
   const About = lazy(() => import("./pages/about-page"));
+  const Favorite = lazy(() => import("./pages/favorite-page"));
 
   const KeyboardDetail = lazy(() => import("./pages/keyboard-detail-page"));
   const KeycapDetail = lazy(() => import("./pages/keycap-detail-page"));
@@ -24,6 +25,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/favorite" element={<Favorite />} />
 
           <Route path="/keyboards/:keyboardId" element={<KeyboardDetail />} />
           <Route path="/keycaps/:keycapId" element={<KeycapDetail />} />

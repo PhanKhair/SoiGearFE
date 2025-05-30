@@ -2,6 +2,12 @@ import { Button } from "@/components/globals/atoms/button";
 import Privilege from "@/components/globals/molecules/privilege";
 import RatingStars from "@/components/globals/molecules/render-stars";
 import { getStatusMeta, StatusEnum } from "@/constants/enum/Status";
+import {
+  addKeyboardToFavorite,
+  addKeycapToFavorite,
+  isKeyboardInFavorite,
+  isKeycapInFavorite,
+} from "@/contexts/FavoriteContext";
 import { KeyboardType } from "@/schemas/keyboardSchema";
 import { KeycapType } from "@/schemas/keycapSchema";
 import { formatCurrencyVND } from "@/utils/formatter";
@@ -9,25 +15,32 @@ import { Heart, Minus, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface informationDetailProps {
-  className?: string;
+  variant: "keyboard" | "keycap";
   keyboard?: KeyboardType;
   keycap?: KeycapType;
   selectedColor?: string;
   onColorChange?: (color: string) => void;
+  className?: string;
 }
 
 function InformationDetail({
-  className,
+  variant,
   keyboard,
   keycap,
   selectedColor = "",
   onColorChange,
+  className,
 }: informationDetailProps) {
-  const product = keyboard || keycap;
-
   const [count, setCount] = useState(1);
-
+  const [isFavorite, setIsFavorite] = useState(false);
   const [isDiable, setIsDiable] = useState(true);
+
+  const product = variant === "keyboard" ? keyboard : keycap;
+
+  const productId =
+    variant === "keyboard"
+      ? (product as KeyboardType).keyboardId
+      : (product as KeycapType).keycapId;
 
   const { label, color } = getStatusMeta(
     product?.status || StatusEnum.InComing,
@@ -42,6 +55,60 @@ function InformationDetail({
   useEffect(() => {
     setIsDiable(count === 1);
   }, [count]);
+
+  useEffect(() => {
+    if (variant === "keyboard") {
+      setIsFavorite(isKeyboardInFavorite(productId));
+    } else {
+      setIsFavorite(isKeycapInFavorite(productId));
+    }
+  }, [productId, variant]);
+
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "favoriteChanged" && event.newValue === "true") {
+        if (variant === "keyboard") {
+          setIsFavorite(isKeyboardInFavorite(productId));
+        } else {
+          setIsFavorite(isKeycapInFavorite(productId));
+        }
+        localStorage.setItem("favoriteChanged", "false");
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+
+    if (localStorage.getItem("favoriteChanged") === "true" && productId) {
+      if (variant === "keyboard") {
+        setIsFavorite(isKeyboardInFavorite(productId));
+      } else {
+        setIsFavorite(isKeycapInFavorite(productId));
+      }
+      localStorage.setItem("favoriteChanged", "false");
+    }
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, [product]);
+
+  const handleFavorite = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    event.preventDefault();
+    if (!productId) return;
+
+    if (variant === "keyboard") {
+      addKeyboardToFavorite(productId);
+      setIsFavorite(isKeyboardInFavorite(productId));
+    } else {
+      addKeycapToFavorite(productId);
+      setIsFavorite(isKeycapInFavorite(productId));
+    }
+  };
+
+  if (!product) {
+    return null;
+  }
 
   return (
     <div className={className}>
@@ -127,8 +194,15 @@ function InformationDetail({
             </Button>
           </div>
 
-          <div className="col-span-1 flex h-full items-center justify-center rounded-md border hover:cursor-pointer">
-            <Heart size={25} className="text-o-primary" />
+          <div
+            className={`col-span-1 flex h-full items-center justify-center rounded-md border hover:cursor-pointer ${
+              isFavorite
+                ? "bg-o-primary text-white"
+                : "hover:bg-o-primary text-o-primary duration-400 hover:text-white"
+            }`}
+            onClick={handleFavorite}
+          >
+            <Heart size={25} />
           </div>
         </div>
 

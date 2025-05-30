@@ -1,10 +1,13 @@
 import { KeycapType } from "@/schemas/keycapSchema";
 import { formatCurrencyVND } from "@/utils/formatter";
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { toast } from "sonner";
 import RatingStars from "./render-stars";
+import {
+  addKeycapToFavorite,
+  isKeycapInFavorite,
+} from "@/contexts/FavoriteContext";
 
 interface keycapCardProps {
   data: KeycapType;
@@ -13,20 +16,42 @@ interface keycapCardProps {
 function KeycapCard({ data }: keycapCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
+  
+  useEffect(() => {
+    if (data?.keycapId) {
+      setIsFavorite(isKeycapInFavorite(data.keycapId));
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "favoriteChanged" && event.newValue === "true") {
+        if (data?.keycapId) {
+          setIsFavorite(isKeycapInFavorite(data.keycapId));
+        }
+        localStorage.setItem("favoriteChanged", "false");
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+
+    if (localStorage.getItem("favoriteChanged") === "true" && data?.keycapId) {
+      setIsFavorite(isKeycapInFavorite(data.keycapId));
+      localStorage.setItem("favoriteChanged", "false");
+    }
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, [data]);
+
   const handleFavorite = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
+    if (!data?.keycapId) return;
 
-    setIsFavorite((prev) => !prev);
-    toast(isFavorite ? "Removed from favorites" : "Added to favorites", {
-      description: (
-        <span className="text-gray-500">
-          {isFavorite
-            ? "Product removed from your list."
-            : "Product added to your list."}
-        </span>
-      ),
-    });
+    addKeycapToFavorite(data.keycapId);
+    setIsFavorite(isKeycapInFavorite(data.keycapId));
   };
 
   return (

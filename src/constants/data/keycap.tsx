@@ -3,7 +3,7 @@ import { StatusEnum } from "../enum/Status";
 
 export const sampleKeycapData: KeycapType[] = [
   {
-    keycapId: "gmk-klassiker",
+    keycapId: "dd9a9921-e107-498d-af2f-9b618ed322c7",
     name: "GMK CYL Klassiker",
     oldPrice: 3600000,
     newPrice: 3090000,
@@ -18,7 +18,7 @@ export const sampleKeycapData: KeycapType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    keycapId: "cmk-darling",
+    keycapId: "527710d0-d3e8-476b-9aca-7c97f6556020",
     name: "CMK CYL Darling R2",
     oldPrice: 3700000,
     newPrice: 3350000,
@@ -34,7 +34,7 @@ export const sampleKeycapData: KeycapType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    keycapId: "gmk-olivia",
+    keycapId: "c9b397a6-ff92-47ae-9133-d1347fba808c",
     name: "GMK CYL OLIVIA",
     oldPrice: 4100000,
     newPrice: 3490000,
@@ -49,7 +49,7 @@ export const sampleKeycapData: KeycapType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    keycapId: "gmk-shoko",
+    keycapId: "0ca05a30-fb55-4257-93af-d238bc20efcd",
     name: "GMK Shoko R2",
     oldPrice: 3950000,
     newPrice: 2950000,
@@ -64,7 +64,7 @@ export const sampleKeycapData: KeycapType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    keycapId: "gmk-motif",
+    keycapId: "c07b164c-e3f7-4871-8109-1f9e6eee8d89",
     name: "GMK CYL MOTIF",
     oldPrice: 3990000,
     newPrice: 3390000,
@@ -79,7 +79,7 @@ export const sampleKeycapData: KeycapType[] = [
     rating: { totalRating: 120, averageRating: 4.5 },
   },
   {
-    keycapId: "gmk-prussian-blue",
+    keycapId: "5a069a52-beed-429e-877e-1cfbfd7dcbf6",
     name: "GMK CYL Prussian Blue",
     oldPrice: 4300000,
     newPrice: 3690000,
