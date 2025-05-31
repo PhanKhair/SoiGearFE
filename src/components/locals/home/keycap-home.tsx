@@ -8,11 +8,11 @@ import KeycapCard from "@/components/globals/molecules/keycap-card";
 import { sampleKeycapData } from "@/constants/data/keycap";
 import Autoplay from "embla-carousel-autoplay";
 
-interface keycapHomeProps {
+interface KeycapHomeProps {
   className?: string;
 }
 
-function KeycapHome({ className }: keycapHomeProps) {
+function KeycapHome({ className }: KeycapHomeProps) {
   const data = sampleKeycapData;
 
   return (

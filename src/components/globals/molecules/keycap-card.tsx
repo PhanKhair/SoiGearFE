@@ -9,11 +9,11 @@ import {
   isKeycapInFavorite,
 } from "@/contexts/FavoriteContext";
 
-interface keycapCardProps {
+interface KeycapCardProps {
   data: KeycapType;
 }
 
-function KeycapCard({ data }: keycapCardProps) {
+function KeycapCard({ data }: KeycapCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   

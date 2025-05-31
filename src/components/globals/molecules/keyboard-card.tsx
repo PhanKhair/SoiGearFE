@@ -9,11 +9,11 @@ import {
   isKeyboardInFavorite,
 } from "@/contexts/FavoriteContext";
 
-interface keyboardCardProps {
+interface KeyboardCardProps {
   data: KeyboardType;
 }
 
-function KeyboardCard({ data }: keyboardCardProps) {
+function KeyboardCard({ data }: KeyboardCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {

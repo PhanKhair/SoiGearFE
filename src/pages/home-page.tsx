@@ -5,7 +5,7 @@ import NavHome from "@/components/locals/home/nav-home";
 
 function HomePage() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-20">
       <NavHome />
 
       <AnimatedSection>

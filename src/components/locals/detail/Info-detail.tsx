@@ -14,7 +14,7 @@ import { formatCurrencyVND } from "@/utils/formatter";
 import { Heart, Minus, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 
-interface informationDetailProps {
+interface InformationDetailProps {
   variant: "keyboard" | "keycap";
   keyboard?: KeyboardType;
   keycap?: KeycapType;
@@ -30,7 +30,7 @@ function InformationDetail({
   selectedColor = "",
   onColorChange,
   className,
-}: informationDetailProps) {
+}: InformationDetailProps) {
   const [count, setCount] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isDiable, setIsDiable] = useState(true);

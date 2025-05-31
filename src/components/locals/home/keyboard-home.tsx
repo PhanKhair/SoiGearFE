@@ -8,11 +8,11 @@ import KeyboardCard from "@/components/globals/molecules/keyboard-card";
 import { sampleKeyboardData } from "@/constants/data/keyboard";
 import Autoplay from "embla-carousel-autoplay";
 
-interface keyboardHomeProps {
+interface KeyboardHomeProps {
   className?: string;
 }
 
-function KeyboardHome({ className }: keyboardHomeProps) {
+function KeyboardHome({ className }: KeyboardHomeProps) {
   const data = sampleKeyboardData;
 
   return (

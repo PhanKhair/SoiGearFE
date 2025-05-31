@@ -6,12 +6,12 @@ import {
 import { Dialog, DialogContent } from "@/components/globals/atoms/dialog";
 import { useState } from "react";
 
-interface imageDetailProps {
+interface ImageDetailProps {
   className?: string;
   images: string[];
 }
 
-function ImageDetail({ className, images }: imageDetailProps) {
+function ImageDetail({ className, images }: ImageDetailProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ function ImageDetail({ className, images }: imageDetailProps) {
             <img
               src={images[selectedIndex]}
               alt="Main product"
-              className="max-h-[300px] w-full rounded-lg border object-cover hover:cursor-pointer"
+              className="h-[300px] md:h-[500px] w-full rounded-lg border object-fill hover:cursor-pointer"
               onClick={() => setIsOpen(true)}
             />
           </div>
@@ -39,13 +39,13 @@ function ImageDetail({ className, images }: imageDetailProps) {
                 {images.map((img, index) => (
                   <CarouselItem
                     key={index}
-                    className="mr-1 flex max-w-fit items-center justify-center"
+                    className="mr-[5px] flex max-w-fit items-center justify-center"
                   >
                     <img
                       src={img}
                       alt={`Thumbnail ${index}`}
                       onClick={() => setSelectedIndex(index)}
-                      className={`max-h-[90px] w-fit cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:max-h-[100px] ${
+                      className={`h-[80px] w-[80px] cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:h-[120px] md:w-[120px] ${
                         selectedIndex === index
                           ? "border-o-primary"
                           : "border-secondary"
@@ -62,15 +62,15 @@ function ImageDetail({ className, images }: imageDetailProps) {
           <div className="flex max-h-[600px] w-full items-center gap-4">
             {/* Sidebar Carousel */}
             <div className="max-h-[600px] w-1/7">
-              <Carousel orientation="vertical" className="max-h-[500px] w-full">
-                <CarouselContent className="max-h-[500px]">
+              <Carousel orientation="vertical" className="max-h-[540px] w-full">
+                <CarouselContent className="max-h-[550px]">
                   {images.map((img, index) => (
                     <CarouselItem key={index} className="py-1">
                       <img
                         src={img}
                         alt={`Thumbnail ${index}`}
                         onClick={() => setSelectedIndex(index)}
-                        className={`mt-3 max-h-[80px] w-full cursor-pointer rounded-sm border-[2px] object-cover transition-all duration-200 select-none ${
+                        className={`mt-3 h-[80px] w-full cursor-pointer rounded-sm border-[2px] object-cover transition-all duration-200 select-none ${
                           selectedIndex === index
                             ? "border-o-primary"
                             : "border-secondary"
@@ -87,7 +87,7 @@ function ImageDetail({ className, images }: imageDetailProps) {
               <img
                 src={images[selectedIndex]}
                 alt="Main product"
-                className="max-h-[600px] w-full rounded-lg border object-cover hover:cursor-pointer"
+                className="h-[550px] w-full rounded-lg border object-cover hover:cursor-pointer"
                 onClick={() => setIsOpen(true)}
               />
             </div>
