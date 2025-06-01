@@ -33,7 +33,7 @@ function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between bg-white px-10 py-4 drop-shadow-sm xl:hidden">
+      <header className="flex items-center justify-between bg-white px-5 py-4 drop-shadow-sm xl:hidden">
         <Link
           to="/home"
           className="flex w-fit items-center gap-4 text-2xl font-bold text-black"

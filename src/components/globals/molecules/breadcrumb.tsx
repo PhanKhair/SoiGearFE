@@ -17,12 +17,12 @@ function Breadcrumb({ data }: BreadcrumbProps) {
             {item.href ? (
               <a
                 href={item.href}
-                className="text-primary text-lg hover:underline"
+                className="text-primary text-xs hover:underline sm:text-xl"
               >
                 {item.title}
               </a>
             ) : (
-              <span className="text-o-primary text-lg font-medium">
+              <span className="text-o-primary text-xs font-medium sm:text-xl">
                 {item.title}
               </span>
             )}

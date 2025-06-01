@@ -5,6 +5,7 @@ import { sampleKeycapData } from "@/constants/data/keycap";
 import { KeycapType } from "@/schemas/keycapSchema";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import NotFoundPage from "./not-found-page";
 
 function KeycapDetailPage() {
   const { keycapId } = useParams<{ keycapId: string }>();
@@ -16,7 +17,7 @@ function KeycapDetailPage() {
 
   const breadcrumb = [
     { title: "Home", href: "/home" },
-    { title: "Keyboards", href: "/keycaps" },
+    { title: "Keycaps", href: "/keycaps" },
     { title: keycap?.name ?? "" },
   ];
 
@@ -29,6 +30,8 @@ function KeycapDetailPage() {
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
   };
+
+  if (!keycap) return <NotFoundPage />;
 
   return (
     <div className="space-y-10">

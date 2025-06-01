@@ -28,7 +28,7 @@ function ImageDetail({ className, images }: ImageDetailProps) {
             <img
               src={images[selectedIndex]}
               alt="Main product"
-              className="h-[300px] md:h-[500px] w-full rounded-lg border object-fill hover:cursor-pointer"
+              className="h-[350px] w-full rounded-lg border object-fill hover:cursor-pointer md:h-[500px]"
               onClick={() => setIsOpen(true)}
             />
           </div>

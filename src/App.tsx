@@ -4,6 +4,7 @@ import UserLayout from "./components/globals/layouts/user";
 
 import LoadingPage from "./pages/loading-page";
 import ScrollToTop from "./components/globals/organisms/scroll-to-top";
+import NotFoundPage from "./pages/not-found-page";
 
 function App() {
   const Home = lazy(() => import("./pages/home-page"));
@@ -29,6 +30,8 @@ function App() {
 
           <Route path="/keyboards/:keyboardId" element={<KeyboardDetail />} />
           <Route path="/keycaps/:keycapId" element={<KeycapDetail />} />
+
+          <Route path="/*" element={<NotFoundPage />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

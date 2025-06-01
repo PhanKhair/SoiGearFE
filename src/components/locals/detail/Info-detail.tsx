@@ -170,7 +170,7 @@ function InformationDetail({
         </div>
 
         <div className="grid h-13 grid-cols-9 items-center gap-2">
-          <div className="col-span-3 grid h-full grid-cols-3 items-center gap-2 xl:grid-cols-4">
+          <div className="col-span-9 grid h-full grid-cols-3 items-center gap-2 sm:col-span-3 xl:grid-cols-4">
             <button
               disabled={isDiable}
               className={`col-span-1 flex h-full items-center justify-center rounded-lg border py-2 hover:cursor-pointer ${isDiable ? "opacity-60" : "bg-secondary"}`}
@@ -188,14 +188,15 @@ function InformationDetail({
               <Plus size={20} className="text-primary" />
             </button>
           </div>
-          <div className="col-span-5 h-full">
+
+          <div className="col-span-7 h-full sm:col-span-5">
             <Button className="bg-o-primary hover:bg-secondary hover:text-o-primary h-full w-full duration-400 hover:cursor-pointer">
               Buy now
             </Button>
           </div>
 
           <div
-            className={`col-span-1 flex h-full items-center justify-center rounded-md border hover:cursor-pointer ${
+            className={`col-span-2 flex h-full items-center justify-center rounded-md border hover:cursor-pointer sm:col-span-1 ${
               isFavorite
                 ? "bg-o-primary text-white"
                 : "hover:bg-o-primary text-o-primary duration-400 hover:text-white"
@@ -206,7 +207,7 @@ function InformationDetail({
           </div>
         </div>
 
-        <Privilege />
+        <Privilege className="mt-10 sm:mt-0 h-full" />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { sampleKeyboardData } from "@/constants/data/keyboard";
 import { KeyboardType } from "@/schemas/keyboardSchema";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import NotFoundPage from "./not-found-page";
 
 function KeyboardDetailPage() {
   const { keyboardId } = useParams<{ keyboardId: string }>();
@@ -33,6 +34,8 @@ function KeyboardDetailPage() {
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
   };
+
+  if (!keyboard) return <NotFoundPage />;
 
   return (
     <div className="space-y-10">
