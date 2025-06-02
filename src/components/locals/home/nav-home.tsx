@@ -1,13 +1,10 @@
 import { Card } from "@/components/globals/atoms/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/globals/atoms/carousel";
+
 import { ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import Autoplay from "embla-carousel-autoplay";
+import EmblaCarousel from "@/components/globals/molecules/embla-carousel";
+import { EmblaOptionsType } from "embla-carousel";
 
 const navItems = [
   {
@@ -96,6 +93,8 @@ const images = [
   "//bizweb.dktcdn.net/100/438/322/themes/837712/assets/slider_1.jpg?1747295827492",
 ];
 
+const options: EmblaOptionsType = { loop: true };
+
 interface NavHomeProp {
   className?: string;
 }
@@ -174,27 +173,12 @@ function NavHome({ className }: NavHomeProp) {
         </div>
 
         <div className="relative z-10 col-span-4 xl:col-span-3">
-          <Carousel
-            plugins={[
-              Autoplay({
-                delay: 2200,
-              }),
-            ]}
-          >
-            <CarouselContent>
-              {images.map((imageUrl, index) => (
-                <CarouselItem key={index}>
-                  <div className="flex h-[500px] items-center justify-center hover:cursor-pointer">
-                    <img
-                      src={imageUrl}
-                      alt={`img-${index}`}
-                      className="h-full w-full rounded-lg object-cover select-none xl:object-fill"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+          <EmblaCarousel
+            slides={images}
+            options={options}
+            autoplayDelay={3000}
+            stopOnInteraction={false}
+          />
         </div>
       </div>
     </div>

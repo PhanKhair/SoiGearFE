@@ -1,5 +1,6 @@
 import AnimatedSection from "@/components/globals/molecules/animated-section";
 import Breadcrumb from "@/components/globals/molecules/breadcrumb";
+import DeveloperAbout from "@/components/locals/about/developer-about";
 import OverviewAbout from "@/components/locals/about/overview-about";
 import PolicyAbout from "@/components/locals/about/policy-about";
 import StoryAbout from "@/components/locals/about/story-about";
@@ -18,6 +19,10 @@ function AboutPage() {
 
         <AnimatedSection>
           <OverviewAbout />
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <DeveloperAbout />
         </AnimatedSection>
 
         <AnimatedSection>
