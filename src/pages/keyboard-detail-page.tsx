@@ -7,6 +7,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
 import ReviewDetail from "@/components/locals/detail/review-detail";
+import { sampleOverviewReviewData } from "@/constants/data/overview-review";
+import { sampleReviewProductData } from "@/constants/data/product-review";
+import Tag from "@/components/globals/atoms/tag";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/globals/atoms/carousel";
+import KeyboardCard from "@/components/globals/molecules/keyboard-card";
 
 function KeyboardDetailPage() {
   const { keyboardId } = useParams<{ keyboardId: string }>();
@@ -15,6 +24,12 @@ function KeyboardDetailPage() {
   const keyboard = sampleKeyboardData.find(
     (keyboards: KeyboardType) => keyboards.keyboardId === keyboardId,
   );
+  const otherKeyboards = sampleKeyboardData.filter(
+    (keyboard: KeyboardType) => keyboard.keyboardId !== keyboardId,
+  );
+
+  const overviewReviewData = sampleOverviewReviewData;
+  const reviewData = sampleReviewProductData;
 
   const breadcrumb = [
     { title: "Home", href: "/home" },
@@ -56,7 +71,27 @@ function KeyboardDetailPage() {
           onColorChange={handleColorChange}
         />
 
-        <ReviewDetail className="col-span-2" />
+        <ReviewDetail
+          overview={overviewReviewData}
+          review={reviewData}
+          className="col-span-2"
+        />
+      </div>
+
+      <div className="space-y-6">
+        <Tag label="Related product" variant="more" />
+        <Carousel className="w-full">
+          <CarouselContent>
+            {otherKeyboards.map((product, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/1 md:basis-1/3 xl:basis-1/5"
+              >
+                <KeyboardCard data={product} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </div>
   );

@@ -52,3 +52,4 @@ export const ratingOverviewSchema = z.object({
 });
 
 export type ReviewType = z.infer<typeof reviewSchema>;
+export type OverviewReviewType = z.infer<typeof ratingOverviewSchema>;

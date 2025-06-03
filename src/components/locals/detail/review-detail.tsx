@@ -1,16 +1,23 @@
+import Tag from "@/components/globals/atoms/tag";
+import OverviewReview from "@/components/globals/molecules/overview-review";
+import ProductReview from "@/components/globals/molecules/product-review";
+import { cn } from "@/lib/utils";
+import { OverviewReviewType, ReviewType } from "@/schemas/reviewSchema";
+
 interface ReviewDetailProps {
+  overview: OverviewReviewType;
+  review: ReviewType[];
   className?: string;
 }
 
-function ReviewDetail({ className }: ReviewDetailProps) {
+function ReviewDetail({ overview, review, className }: ReviewDetailProps) {
   return (
-    <div className={className}>
-      <div className="grid grid-cols-2 gap-10">
+    <div className={cn("space-y-6", className)}>
+      <Tag variant="more" label="Our Customer Reviews" />
 
-        <div></div>
+      <OverviewReview overview={overview} />
 
-
-      </div>
+      <ProductReview review={review} />
     </div>
   );
 }

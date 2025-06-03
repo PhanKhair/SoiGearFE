@@ -138,48 +138,46 @@ function NavHome({ className }: NavHomeProp) {
   }, []);
 
   return (
-    <div className={className}>
-      <div className="relative grid grid-cols-4 gap-10">
-        <div className="col-span-4 space-y-4 xl:col-span-1" ref={menuRef}>
-          {navItems.map(({ title, links }) => (
-            <div
-              key={title}
-              className="relative transition-all duration-200 xl:ease-in-out xl:hover:z-60 xl:hover:scale-110"
-              onMouseEnter={!isMobile ? () => handleOpen(title) : undefined}
-              onClick={isMobile ? () => handleOpen(title) : undefined}
-              onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
-            >
-              <div className="relative z-10 flex items-center justify-between border-b pb-4 hover:cursor-pointer">
-                <p className="font-medium">{title}</p>
-                <ChevronRight size={20} className="text-primary" />
-              </div>
-              {/* MENU SUB */}
-              {isOpen && navOpen === title && (
-                <div className="absolute top-5 right-0 bottom-1 z-50 xl:top-0 xl:left-full">
-                  <Card className="w-64 gap-2 space-y-0 px-4 py-2">
-                    {links.map((link) => (
-                      <span
-                        key={link.label}
-                        className="hover:text-primary hover:bg-secondary cursor-pointer rounded-lg px-4 py-2 text-sm underline-offset-2 transition-all ease-in-out hover:scale-105 hover:font-medium hover:underline"
-                      >
-                        {link.label}
-                      </span>
-                    ))}
-                  </Card>
-                </div>
-              )}
+    <div className={`relative grid grid-cols-4 gap-10 ${className ?? ""}`}>
+      <div className="col-span-4 space-y-4 xl:col-span-1" ref={menuRef}>
+        {navItems.map(({ title, links }) => (
+          <div
+            key={title}
+            className="relative transition-all duration-200 xl:ease-in-out xl:hover:z-60 xl:hover:scale-110"
+            onMouseEnter={!isMobile ? () => handleOpen(title) : undefined}
+            onClick={isMobile ? () => handleOpen(title) : undefined}
+            onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
+          >
+            <div className="relative z-10 flex items-center justify-between border-b pb-4 hover:cursor-pointer">
+              <p className="font-medium">{title}</p>
+              <ChevronRight size={20} className="text-primary" />
             </div>
-          ))}
-        </div>
+            {/* MENU SUB */}
+            {isOpen && navOpen === title && (
+              <div className="absolute top-5 right-0 bottom-1 z-50 xl:top-0 xl:left-full">
+                <Card className="w-64 gap-2 space-y-0 px-4 py-2">
+                  {links.map((link) => (
+                    <span
+                      key={link.label}
+                      className="hover:text-primary hover:bg-secondary cursor-pointer rounded-lg px-4 py-2 text-sm underline-offset-2 transition-all ease-in-out hover:scale-105 hover:font-medium hover:underline"
+                    >
+                      {link.label}
+                    </span>
+                  ))}
+                </Card>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
 
-        <div className="relative z-10 col-span-4 xl:col-span-3">
-          <EmblaCarousel
-            slides={images}
-            options={options}
-            autoplayDelay={3000}
-            stopOnInteraction={false}
-          />
-        </div>
+      <div className="relative z-10 col-span-4 xl:col-span-3">
+        <EmblaCarousel
+          slides={images}
+          options={options}
+          autoplayDelay={3000}
+          stopOnInteraction={false}
+        />
       </div>
     </div>
   );

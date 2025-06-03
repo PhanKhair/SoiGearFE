@@ -2,45 +2,46 @@ import { ReviewType } from "@/schemas/reviewSchema";
 
 export const sampleReviewProductData: ReviewType[] = [
   {
-    reviewId: "123",
-    productId: "234",
-    userId: "345",
+    reviewId: "r1",
+    productId: "p234",
+    userId: "u345",
     user: {
-      name: "Phan Khai",
+      name: "Khải Tỏi",
       avatar:
-        "https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/avatar-anh-meo-cute-3.jpg",
+        "https://inkythuatso.com/uploads/thumbnails/800/2023/02/hinh-anh-cun-con-de-thuong-mat-ngo-ngac-1-24-11-47-36.jpg",
     },
-    comment: " Sản phẩm quá là đẹp và tuyệt vời",
-    rating: 4,
-    createdAt: "2025-06-03T07:48:00.000Z",
-    updatedAt: "2025-06-03T07:48:00.000Z",
+    comment: "Thiết kế tinh tế, chất lượng vượt mong đợi. Mình rất hài lòng!",
+    rating: 5,
+    createdAt: "2025-06-03T09:30:00.000Z",
+    updatedAt: "2025-06-03T09:30:00.000Z",
   },
   {
-    reviewId: "123",
-    productId: "234",
-    userId: "345",
+    reviewId: "r2",
+    productId: "p234",
+    userId: "u346",
     user: {
-      name: "Phan Khai",
+      name: "Hữu Toàn",
       avatar:
         "https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/avatar-anh-meo-cute-3.jpg",
     },
-    comment: " Sản phẩm quá là đẹp và tuyệt vời",
+    comment:
+      "Màu sắc ổn, giao hàng nhanh nhưng đóng gói chưa thực sự chắc chắn.",
     rating: 4,
-    createdAt: "2025-06-03T07:48:00.000Z",
-    updatedAt: "2025-06-03T07:48:00.000Z",
+    createdAt: "2025-06-02T15:12:00.000Z",
+    updatedAt: "2025-06-02T15:12:00.000Z",
   },
   {
-    reviewId: "123",
-    productId: "234",
-    userId: "345",
+    reviewId: "r3",
+    productId: "p234",
+    userId: "u347",
     user: {
-      name: "Phan Khai",
+      name: "Duy Cá",
       avatar:
-        "https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/avatar-anh-meo-cute-3.jpg",
+        "https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/475223Amy/anh-mo-ta.png",
     },
-    comment: " Sản phẩm quá là đẹp và tuyệt vời",
-    rating: 4,
-    createdAt: "2025-06-03T07:48:00.000Z",
-    updatedAt: "2025-06-03T07:48:00.000Z",
+    comment: "Tạm ổn trong tầm giá. Có thể cải thiện thêm về độ bền.",
+    rating: 3,
+    createdAt: "2025-06-01T07:48:00.000Z",
+    updatedAt: "2025-06-01T07:48:00.000Z",
   },
 ];

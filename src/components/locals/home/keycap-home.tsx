@@ -16,29 +16,27 @@ function KeycapHome({ className }: KeycapHomeProps) {
   const data = sampleKeycapData;
 
   return (
-    <div className={className}>
-      <div className="space-y-6">
-        <Tag label="Keycap's" variant="more" />
-        <Carousel
-          className="w-full"
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {data.map((product, index) => (
-              <CarouselItem
-                key={index}
-                className="basis-1/1 md:basis-1/3 xl:basis-1/5"
-              >
-                <KeycapCard data={product} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
+    <div className={`space-y-6 ${className ?? ""}`}>
+      <Tag label="Keycap's" variant="more" />
+      <Carousel
+        className="w-full"
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+      >
+        <CarouselContent>
+          {data.map((product, index) => (
+            <CarouselItem
+              key={index}
+              className="basis-1/1 md:basis-1/3 xl:basis-1/5"
+            >
+              <KeycapCard data={product} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </div>
   );
 }

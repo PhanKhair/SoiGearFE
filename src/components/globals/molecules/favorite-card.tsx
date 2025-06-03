@@ -45,51 +45,49 @@ function FavoriteCard({
   };
 
   return (
-    <div className={className}>
-      <div className="flex flex-col">
-        <div className="relative h-60 overflow-hidden rounded-md select-none hover:cursor-pointer">
-          <Link to={routePath}>
-            <img
-              src={product.images[0]}
-              alt="product"
-              className="absolute top-0 left-0 h-full w-full object-cover opacity-100 transition-opacity hover:opacity-0"
-            />
-            <img
-              src={product.images[1]}
-              alt="product-hover"
-              className="absolute top-0 left-0 h-full w-full object-cover opacity-0 transition-opacity hover:opacity-100"
-            />
-          </Link>
-
-          <span className="bg-o-primary absolute top-3 left-3 rounded px-2 py-1 text-xs text-white">
-            - {product.discount}%
-          </span>
-
-          <div className="absolute top-2 right-2 rounded px-2 py-1 text-xs">
-            <div
-              className="bg-secondary flex items-center justify-center rounded-full p-[5px] transition-colors hover:cursor-pointer"
-              onClick={handleRemove}
-            >
-              <X size={18} className="text-o-primary" />
-            </div>
-          </div>
-        </div>
-
-        <Link to={routePath} className="mt-4 w-fit">
-          <span className="hover:text-o-primary font-medium uppercase duration-300 hover:cursor-pointer">
-            {product.name}
-          </span>
+    <div className={`flex flex-col ${className ?? ""}`}>
+      <div className="relative h-60 overflow-hidden rounded-md select-none hover:cursor-pointer">
+        <Link to={routePath}>
+          <img
+            src={product.images[0]}
+            alt="product"
+            className="absolute top-0 left-0 h-full w-full object-cover opacity-100 transition-opacity hover:opacity-0"
+          />
+          <img
+            src={product.images[1]}
+            alt="product-hover"
+            className="absolute top-0 left-0 h-full w-full object-cover opacity-0 transition-opacity hover:opacity-100"
+          />
         </Link>
 
-        <div className="flex items-center gap-2">
-          <span className="text-o-primary font-medium">
-            {formatCurrencyVND(product.newPrice)}
-          </span>
+        <span className="bg-o-primary absolute top-3 left-3 rounded px-2 py-1 text-xs text-white">
+          - {product.discount}%
+        </span>
 
-          <span className="text-xs font-medium text-gray-400 line-through">
-            {formatCurrencyVND(product.oldPrice)}
-          </span>
+        <div className="absolute top-2 right-2 rounded px-2 py-1 text-xs">
+          <div
+            className="bg-secondary flex items-center justify-center rounded-full p-[5px] transition-colors hover:cursor-pointer"
+            onClick={handleRemove}
+          >
+            <X size={18} className="text-o-primary" />
+          </div>
         </div>
+      </div>
+
+      <Link to={routePath} className="mt-4 w-fit">
+        <span className="hover:text-o-primary font-medium uppercase duration-300 hover:cursor-pointer">
+          {product.name}
+        </span>
+      </Link>
+
+      <div className="flex items-center gap-2">
+        <span className="text-o-primary font-medium">
+          {formatCurrencyVND(product.newPrice)}
+        </span>
+
+        <span className="text-xs font-medium text-gray-400 line-through">
+          {formatCurrencyVND(product.oldPrice)}
+        </span>
       </div>
     </div>
   );
