@@ -15,49 +15,49 @@ const site = [
   {
     name: "Tom Cruise",
     role: "Founder & Chairman",
-    image: "/public/images/TomCruise.png",
+    image: "/images/TomCruise.png",
   },
   {
     name: "Emma Watson",
     role: "Managing Director",
-    image: "/public/images/EmmaWatson.png",
+    image: "/images/EmmaWatson.png",
   },
   {
     name: "Will Smith",
     role: "Product Designer",
-    image: "/public/images/WillSmith.png",
+    image: "/images/WillSmith.png",
   },
 
   {
     name: "Tom Cruise",
     role: "Founder & Chairman",
-    image: "/public/images/TomCruise.png",
+    image: "/images/TomCruise.png",
   },
   {
     name: "Emma Watson",
     role: "Managing Director",
-    image: "/public/images/EmmaWatson.png",
+    image: "/images/EmmaWatson.png",
   },
   {
     name: "Will Smith",
     role: "Product Designer",
-    image: "/public/images/WillSmith.png",
+    image: "/images/WillSmith.png",
   },
 
   {
     name: "Tom Cruise",
     role: "Founder & Chairman",
-    image: "/public/images/TomCruise.png",
+    image: "/images/TomCruise.png",
   },
   {
     name: "Emma Watson",
     role: "Managing Director",
-    image: "/public/images/EmmaWatson.png",
+    image: "/images/EmmaWatson.png",
   },
   {
     name: "Will Smith",
     role: "Product Designer",
-    image: "/public/images/WillSmith.png",
+    image: "/images/WillSmith.png",
   },
 ];
 

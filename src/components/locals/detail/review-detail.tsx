@@ -13,7 +13,7 @@ interface ReviewDetailProps {
 function ReviewDetail({ overview, review, className }: ReviewDetailProps) {
   return (
     <div className={cn("space-y-6", className)}>
-      <Tag variant="more" label="Our Customer Reviews" />
+      <Tag variant="more" label="Customer review" />
 
       <OverviewReview overview={overview} />
 
