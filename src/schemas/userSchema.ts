@@ -76,6 +76,11 @@ export const registerSchema = userSchema.pick({
   password: true,
 });
 
+export const userProductSchema = z.object({
+  name: userSchema.shape.fullName,
+  avatar: userSchema.shape.avatarUrl,
+});
+
 export type UserType = z.infer<typeof userSchema>;
 export type CreateUserType = z.infer<typeof createUserSchema>;
 export type RegisterType = z.infer<typeof registerSchema>;

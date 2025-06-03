@@ -6,6 +6,7 @@ import { KeyboardType } from "@/schemas/keyboardSchema";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
+import ReviewDetail from "@/components/locals/detail/review-detail";
 
 function KeyboardDetailPage() {
   const { keyboardId } = useParams<{ keyboardId: string }>();
@@ -54,6 +55,8 @@ function KeyboardDetailPage() {
           selectedColor={selectedColor}
           onColorChange={handleColorChange}
         />
+
+        <ReviewDetail className="col-span-2" />
       </div>
     </div>
   );
