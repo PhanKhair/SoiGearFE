@@ -44,17 +44,19 @@ function FavoriteCard({
     }
   };
 
+  const filteredImageUrls: string[] = product.images.map((item) => item.img);
+
   return (
     <div className={`flex flex-col ${className ?? ""}`}>
       <div className="relative h-60 overflow-hidden rounded-md select-none hover:cursor-pointer">
         <Link to={routePath}>
           <img
-            src={product.images[0]}
+            src={filteredImageUrls[0]}
             alt="product"
             className="absolute top-0 left-0 h-full w-full object-cover opacity-100 transition-opacity hover:opacity-0"
           />
           <img
-            src={product.images[1]}
+            src={filteredImageUrls[1]}
             alt="product-hover"
             className="absolute top-0 left-0 h-full w-full object-cover opacity-0 transition-opacity hover:opacity-100"
           />
