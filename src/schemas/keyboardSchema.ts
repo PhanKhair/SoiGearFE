@@ -3,6 +3,11 @@ import { uuidSchema } from "./baseSchema";
 import { ratingProductSchema } from "./reviewSchema";
 import { StatusSchemaEnum } from "@/constants/enum/Status";
 
+export const imagesProductSchema = z.object({
+  img: z.string(),
+  color: z.string().optional(),
+});
+
 export const keyboardSchema = z.object({
   keyboardId: uuidSchema,
 
@@ -25,8 +30,7 @@ export const keyboardSchema = z.object({
     .nonempty({ message: "Description must not be empty" })
     .min(10, { message: "Description must be at least 10 characters long" }),
 
-  colors: z.array(z.string()),
-  images: z.array(z.string()),
+  images: z.array(imagesProductSchema),
 
   status: StatusSchemaEnum,
 
@@ -34,3 +38,4 @@ export const keyboardSchema = z.object({
 });
 
 export type KeyboardType = z.infer<typeof keyboardSchema>;
+export type ImagesProductType = z.infer<typeof imagesProductSchema>;

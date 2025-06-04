@@ -3,7 +3,7 @@ import ImageDetail from "@/components/locals/detail/img-detail";
 import InformationDetail from "@/components/locals/detail/Info-detail";
 import { sampleKeyboardData } from "@/constants/data/keyboard";
 import { KeyboardType } from "@/schemas/keyboardSchema";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
 import ReviewDetail from "@/components/locals/detail/review-detail";
@@ -37,16 +37,6 @@ function KeyboardDetailPage() {
     { title: keyboard?.name ?? "" },
   ];
 
-  useEffect(() => {
-    if (
-      keyboard?.colors &&
-      keyboard.colors.length > 0 &&
-      selectedColor === null
-    ) {
-      setSelectedColor(keyboard.colors[0]);
-    }
-  }, [keyboard?.colors, selectedColor]);
-
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
   };
@@ -59,6 +49,7 @@ function KeyboardDetailPage() {
 
       <div className="grid grid-cols-2 gap-10">
         <ImageDetail
+          color={selectedColor}
           images={keyboard?.images ?? []}
           className="col-span-2 xl:col-span-1"
         />

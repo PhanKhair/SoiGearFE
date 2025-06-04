@@ -9,7 +9,7 @@ import {
   isKeycapInFavorite,
 } from "@/contexts/FavoriteContext";
 import { cn } from "@/lib/utils";
-import { KeyboardType } from "@/schemas/keyboardSchema";
+import { ImagesProductType, KeyboardType } from "@/schemas/keyboardSchema";
 import { KeycapType } from "@/schemas/keycapSchema";
 import { formatCurrencyVND } from "@/utils/formatter";
 import { Heart, Minus, Plus } from "lucide-react";
@@ -51,6 +51,7 @@ function InformationDetail({
     if (onColorChange) {
       onColorChange(color);
     }
+    console.log(color)
   };
 
   useEffect(() => {
@@ -111,6 +112,15 @@ function InformationDetail({
     return null;
   }
 
+  const handleBuyProduct = () => {
+    const data = {
+      color: selectedColor,
+      count: count,
+    };
+
+    console.log("hehe", JSON.stringify(data, null, 2));
+  };
+
   return (
     <div className={cn("flex h-full flex-col gap-4", className)}>
       <p className="text-primary text-3xl font-bold uppercase">
@@ -144,29 +154,29 @@ function InformationDetail({
         {product?.description}
       </span>
 
-      <div>
-        {product?.colors && product.colors.length > 0 && (
-          <div className="flex items-center gap-2">
-            <p className="text-sm font-semibold text-gray-600">
-              Color Options:
-            </p>
-            <div className="flex items-center gap-2">
-              {product.colors.map((color, index) => (
+      <div className="flex items-center gap-2">
+        <p className="text-sm font-semibold text-gray-600">Color Options:</p>
+        <div className="flex items-center gap-2">
+          {(product.images as ImagesProductType[])
+            .filter((item) => item.color)
+            .map((item, index) => (
+              <div
+                key={index}
+                className={`rounded-full border-3 p-[5px] hover:cursor-pointer ${
+                  selectedColor === item.color
+                    ? "border-primary"
+                    : "border-white"
+                }`}
+                onClick={() => handleColorSelect(item.color!)}
+              >
                 <div
-                  key={index}
-                  className={`rounded-full border-3 p-[5px] hover:cursor-pointer ${selectedColor === color ? "border-primary" : "border-white"}`}
-                  onClick={() => handleColorSelect(color)}
-                >
-                  <div
-                    className="h-6 w-6 rounded-full"
-                    style={{ backgroundColor: color }}
-                    title={color}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+                  className="h-6 w-6 rounded-full"
+                  style={{ backgroundColor: item.color }}
+                  title={item.color}
+                />
+              </div>
+            ))}
+        </div>
       </div>
 
       <div className="grid h-13 grid-cols-9 items-center gap-2">
@@ -190,7 +200,11 @@ function InformationDetail({
         </div>
 
         <div className="col-span-7 h-full sm:col-span-5">
-          <Button className="bg-o-primary hover:bg-secondary hover:text-o-primary h-full w-full duration-400 hover:cursor-pointer">
+          <Button
+            disabled={selectedColor === ""}
+            className="bg-o-primary hover:bg-secondary hover:text-o-primary h-full w-full duration-400 hover:cursor-pointer"
+            onClick={handleBuyProduct}
+          >
             Buy now
           </Button>
         </div>

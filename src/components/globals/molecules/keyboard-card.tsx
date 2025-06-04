@@ -56,17 +56,19 @@ function KeyboardCard({ data }: KeyboardCardProps) {
     setIsFavorite(isKeyboardInFavorite(data.keyboardId));
   };
 
+  const filteredImageUrls: string[] = data.images.map((item) => item.img);
+
   return (
     <div className="flex flex-col">
       <div className="relative h-60 overflow-hidden rounded-md select-none hover:cursor-pointer">
         <Link to={`/keyboards/${data.keyboardId}`}>
           <img
-            src={data.images[0]}
+            src={filteredImageUrls[0]}
             alt="product"
             className="absolute top-0 left-0 h-full w-full object-cover opacity-100 transition-opacity hover:opacity-0"
           />
           <img
-            src={data.images[1]}
+            src={filteredImageUrls[1]}
             alt="product-hover"
             className="absolute top-0 left-0 h-full w-full object-cover opacity-0 transition-opacity hover:opacity-100"
           />

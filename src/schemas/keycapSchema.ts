@@ -2,6 +2,7 @@ import { z } from "zod";
 import { uuidSchema } from "./baseSchema";
 import { ratingProductSchema } from "./reviewSchema";
 import { StatusSchemaEnum } from "@/constants/enum/Status";
+import { imagesProductSchema } from "./keyboardSchema";
 
 export const keycapSchema = z.object({
   keycapId: uuidSchema,
@@ -25,8 +26,7 @@ export const keycapSchema = z.object({
     .nonempty({ message: "Description must not be empty" })
     .min(10, { message: "Description must be at least 10 characters long" }),
 
-  colors: z.array(z.string()),
-  images: z.array(z.string()),
+  images: z.array(imagesProductSchema),
 
   status: StatusSchemaEnum,
 

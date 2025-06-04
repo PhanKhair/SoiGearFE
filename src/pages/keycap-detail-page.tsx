@@ -3,7 +3,7 @@ import ImageDetail from "@/components/locals/detail/img-detail";
 import InformationDetail from "@/components/locals/detail/Info-detail";
 import { sampleKeycapData } from "@/constants/data/keycap";
 import { KeycapType } from "@/schemas/keycapSchema";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
 import ReviewDetail from "@/components/locals/detail/review-detail";
@@ -37,12 +37,6 @@ function KeycapDetailPage() {
     { title: keycap?.name ?? "" },
   ];
 
-  useEffect(() => {
-    if (keycap?.colors && keycap.colors.length > 0 && selectedColor === null) {
-      setSelectedColor(keycap.colors[0]);
-    }
-  }, [keycap?.colors, selectedColor]);
-
   const handleColorChange = (color: string) => {
     setSelectedColor(color);
   };
@@ -55,6 +49,7 @@ function KeycapDetailPage() {
 
       <div className="grid grid-cols-2 gap-10">
         <ImageDetail
+          color={selectedColor}
           images={keycap?.images ?? []}
           className="col-span-2 xl:col-span-1"
         />

@@ -1,19 +1,17 @@
-import ClipLoader from "react-spinners/ClipLoader";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 function LoadingPage() {
   return (
-    <div className="mx-auto flex min-h-screen w-full items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <ClipLoader
-          className="text-primary"
-          loading={true}
-          size={100}
-          cssOverride={{
-            borderWidth: "4px",
-          }}
-        />
-        <p className="text-primary">Loading ...</p>
-      </div>
+    <div className="relative mx-auto flex w-full items-center justify-center">
+      <DotLottieReact
+        src="/assets/loading.json"
+        loop
+        autoplay
+        className="h-[500px] w-[800px]"
+      />
+      <p className="text-primary absolute bottom-1 text-2xl font-medium">
+        Loading ...
+      </p>
     </div>
   );
 }

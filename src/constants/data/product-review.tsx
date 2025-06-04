@@ -20,7 +20,7 @@ export const sampleReviewProductData: ReviewType[] = [
     productId: "p234",
     userId: "u346",
     user: {
-      name: "Hữu Toàn",
+      name: "Toan Dev Trai",
       avatar:
         "https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/avatar-anh-meo-cute-3.jpg",
     },

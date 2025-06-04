@@ -1,24 +1,47 @@
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/components/globals/atoms/carousel";
 import { Dialog, DialogContent } from "@/components/globals/atoms/dialog";
-import { useState } from "react";
+import { ImagesProductType } from "@/schemas/keyboardSchema";
+import { useEffect, useState } from "react";
 
 interface ImageDetailProps {
+  color?: string;
+  images: ImagesProductType[];
   className?: string;
-  images: string[];
 }
 
-function ImageDetail({ className, images }: ImageDetailProps) {
+function ImageDetail({ color, images, className }: ImageDetailProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [horizontalApi, setHorizontalApi] = useState<CarouselApi>();
+  const [verticalApi, setVerticalApi] = useState<CarouselApi>();
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    if (color) {
+      const foundIndex = images.findIndex((item) => item.color === color);
+      if (foundIndex !== -1) {
+        setSelectedIndex(foundIndex);
+
+        if (horizontalApi) {
+          horizontalApi.scrollTo(foundIndex);
+        }
+        if (verticalApi) {
+          verticalApi?.scrollTo(foundIndex);
+        }
+      }
+    }
+  }, [color, images, horizontalApi, verticalApi]);
+
+  const filteredImageUrls: string[] = images.map((item) => item.img);
 
   return (
     <>
@@ -27,7 +50,7 @@ function ImageDetail({ className, images }: ImageDetailProps) {
       >
         <div className="h-full w-full">
           <img
-            src={images[selectedIndex]}
+            src={filteredImageUrls[selectedIndex]}
             alt="Main product"
             className="h-[350px] w-full rounded-lg border object-fill hover:cursor-pointer md:h-[500px]"
             onClick={() => setIsOpen(true)}
@@ -35,18 +58,22 @@ function ImageDetail({ className, images }: ImageDetailProps) {
         </div>
 
         <div className="max-h-[600px] w-full">
-          <Carousel orientation="horizontal" className="w-fit">
+          <Carousel
+            orientation="horizontal"
+            className="w-fit"
+            setApi={setHorizontalApi}
+          >
             <CarouselContent className="w-fit">
-              {images.map((img, index) => (
+              {filteredImageUrls.map((img, index) => (
                 <CarouselItem
                   key={index}
-                  className="mr-[5px] flex max-w-fit items-center justify-center"
+                  className="mr-2 flex max-w-fit items-center justify-center"
                 >
                   <img
                     src={img}
                     alt={`Thumbnail ${index}`}
                     onClick={() => setSelectedIndex(index)}
-                    className={`h-[80px] w-[80px] cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:h-[120px] md:w-[120px] ${
+                    className={`h-[90px] ml-[5px] w-[90px] cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:h-[120px] md:w-[120px] ${
                       selectedIndex === index
                         ? "border-o-primary"
                         : "border-secondary"
@@ -63,15 +90,19 @@ function ImageDetail({ className, images }: ImageDetailProps) {
         <div className="flex max-h-[600px] w-full items-center gap-4">
           {/* Sidebar Carousel */}
           <div className="max-h-[600px] w-1/7">
-            <Carousel orientation="vertical" className="max-h-[540px] w-full">
+            <Carousel
+              orientation="vertical"
+              className="max-h-[540px] w-full"
+              setApi={setVerticalApi}
+            >
               <CarouselContent className="max-h-[550px]">
-                {images.map((img, index) => (
+                {filteredImageUrls.map((img, index) => (
                   <CarouselItem key={index} className="py-1">
                     <img
                       src={img}
                       alt={`Thumbnail ${index}`}
                       onClick={() => setSelectedIndex(index)}
-                      className={`mt-3 h-[80px] w-full cursor-pointer rounded-sm border-[2px] object-cover transition-all duration-200 select-none ${
+                      className={`mt-4 h-[80px] w-full cursor-pointer rounded-sm border-[2px] object-cover transition-all duration-200 select-none ${
                         selectedIndex === index
                           ? "border-o-primary"
                           : "border-secondary"
@@ -86,9 +117,9 @@ function ImageDetail({ className, images }: ImageDetailProps) {
           {/* Main Image */}
           <div className="h-full w-6/7">
             <img
-              src={images[selectedIndex]}
+              src={filteredImageUrls[selectedIndex]}
               alt="Main product"
-              className="h-[550px] w-full rounded-lg border object-cover hover:cursor-pointer"
+              className="h-[550px] w-full rounded-lg border object-cover select-none hover:cursor-pointer"
               onClick={() => setIsOpen(true)}
             />
           </div>
@@ -98,7 +129,7 @@ function ImageDetail({ className, images }: ImageDetailProps) {
       <Dialog open={isOpen} onOpenChange={handleClose}>
         <DialogContent className="flex min-w-[300px] justify-center md:min-w-[600px] xl:min-h-[600px] xl:min-w-[720px]">
           <img
-            src={images[selectedIndex]}
+            src={filteredImageUrls[selectedIndex]}
             alt="Main product"
             className="mt-5 max-h-[600px] w-full max-w-[700px] rounded-lg border object-fill xl:max-h-[580px] xl:min-h-[500px]"
           />
