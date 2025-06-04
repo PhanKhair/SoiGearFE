@@ -189,3 +189,67 @@ export const removeKeycapFromFavorite = (keycapId: string): void => {
     console.error("Lỗi khi xoá keycapId khỏi favorite:", error);
   }
 };
+
+// TÍNH SỐ LƯỢNG KEYBOARD
+export const getFavoriteKeyboardCount = (): number => {
+  try {
+    const stored = localStorage.getItem("favoriteKeyboardIds");
+    if (!stored) return 0;
+
+    const favoriteKeyboardIds: (string | number)[] = JSON.parse(stored);
+    return favoriteKeyboardIds.length;
+  } catch (error) {
+    console.error("Lỗi khi đếm số lượng favorite keyboard:", error);
+    return 0;
+  }
+};
+
+// TÍNH SỐ LƯỢNG KEYCAP
+export const getFavoriteKeycapCount = (): number => {
+  try {
+    const stored = localStorage.getItem("favoriteKeycapIds");
+    if (!stored) return 0;
+
+    const favoriteKeycapIds: string[] = JSON.parse(stored);
+    return favoriteKeycapIds.length;
+  } catch (error) {
+    console.error("Lỗi khi đếm số lượng favorite keycap:", error);
+    return 0;
+  }
+};
+
+// Hàm tính tổng số lượng favorite (keyboard + keycap)
+export const getTotalFavoriteCount = (): number => {
+  return getFavoriteKeyboardCount() + getFavoriteKeycapCount();
+};
+
+// Hàm tính số lượng favorite với tự động kiểm tra favoriteChanged
+export const getFavoriteCountWithAutoRefresh = (): {
+  totalCount: number;
+} => {
+  try {
+    // Kiểm tra nếu favoriteChanged = true thì reset flag
+    const favoriteChanged = localStorage.getItem("favoriteChanged");
+
+    if (favoriteChanged === "true") {
+      // Reset flag về false
+      localStorage.setItem("favoriteChanged", "false");
+
+      // Log để debug (có thể xóa trong production)
+      console.log("Favorite list changed, recalculating counts...");
+    }
+
+    const keyboardCount = getFavoriteKeyboardCount();
+    const keycapCount = getFavoriteKeycapCount();
+    const totalCount = keyboardCount + keycapCount;
+
+    return {
+      totalCount,
+    };
+  } catch (error) {
+    console.error("Lỗi khi tính số lượng favorite với auto refresh:", error);
+    return {
+      totalCount: 0,
+    };
+  }
+};

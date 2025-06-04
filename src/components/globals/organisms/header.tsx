@@ -25,9 +25,46 @@ import {
 } from "../atoms/dropdown-menu";
 import { useAuth } from "@/contexts/AuthContext";
 import { Avatar, AvatarFallback, AvatarImage } from "../atoms/avatar";
+import { useEffect, useState } from "react";
+import { getTotalFavoriteCount } from "@/contexts/FavoriteContext";
 
 function Header() {
   const { user, isAuthenticated, logout } = useAuth();
+
+  const [counts, setCounts] = useState(0);
+
+  const updateCounts = () => {
+    const newCounts = getTotalFavoriteCount();
+    setCounts(newCounts);
+  };
+
+  useEffect(() => {
+    // Tính toán lần đầu khi component mount
+    updateCounts();
+
+    // Phương pháp 1: Sử dụng custom event
+    const handleCustomFavoriteChange = () => {
+      updateCounts();
+    };
+
+    // Phương pháp 3: Storage event (chỉ hoạt động từ tab khác)
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "favoriteChanged" && event.newValue === "true") {
+        updateCounts();
+      }
+    };
+
+    // Lắng nghe custom event
+    window.addEventListener("favoriteChanged", handleCustomFavoriteChange);
+    // Lắng nghe storage event
+    window.addEventListener("storage", handleStorage);
+
+    return () => {
+      window.removeEventListener("favoriteChanged", handleCustomFavoriteChange);
+      window.removeEventListener("storage", handleStorage);
+      console.log("thay đổi", counts);
+    };
+  }, []);
 
   const location = useLocation();
 
@@ -218,6 +255,7 @@ function Header() {
           <div className="flex items-center gap-4">
             <Input placeholder="What are you looking for?" size={25} />
 
+            {/* MY FAVORITE */}
             <Link to="favorite">
               <div className="flex h-full items-center justify-center rounded-md border px-2 py-2 hover:cursor-pointer">
                 <Heart size={20} className="text-o-primary" />

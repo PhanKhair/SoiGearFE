@@ -51,7 +51,6 @@ function InformationDetail({
     if (onColorChange) {
       onColorChange(color);
     }
-    console.log(color)
   };
 
   useEffect(() => {
@@ -118,7 +117,7 @@ function InformationDetail({
       count: count,
     };
 
-    console.log("hehe", JSON.stringify(data, null, 2));
+    console.log("Mua sản phẩm", JSON.stringify(data, null, 2));
   };
 
   return (

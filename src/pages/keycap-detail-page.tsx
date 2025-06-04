@@ -3,7 +3,7 @@ import ImageDetail from "@/components/locals/detail/img-detail";
 import InformationDetail from "@/components/locals/detail/Info-detail";
 import { sampleKeycapData } from "@/constants/data/keycap";
 import { KeycapType } from "@/schemas/keycapSchema";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
 import ReviewDetail from "@/components/locals/detail/review-detail";
@@ -31,15 +31,19 @@ function KeycapDetailPage() {
   const overviewReviewData = sampleOverviewReviewData;
   const reviewData = sampleReviewProductData;
 
+  useEffect(() => {
+    setSelectedColor("");
+  }, [keycapId]);
+
+  const handleColorChange = (color: string) => {
+    setSelectedColor(color);
+  };
+
   const breadcrumb = [
     { title: "Home", href: "/home" },
     { title: "Keycaps", href: "/keycaps" },
     { title: keycap?.name ?? "" },
   ];
-
-  const handleColorChange = (color: string) => {
-    setSelectedColor(color);
-  };
 
   if (!keycap) return <NotFoundPage />;
 

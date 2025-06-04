@@ -39,6 +39,17 @@ function ImageDetail({ color, images, className }: ImageDetailProps) {
         }
       }
     }
+
+    if (color === "") {
+      setSelectedIndex(0);
+
+      if (horizontalApi) {
+        horizontalApi.scrollTo(0);
+      }
+      if (verticalApi) {
+        verticalApi?.scrollTo(0);
+      }
+    }
   }, [color, images, horizontalApi, verticalApi]);
 
   const filteredImageUrls: string[] = images.map((item) => item.img);
@@ -67,13 +78,13 @@ function ImageDetail({ color, images, className }: ImageDetailProps) {
               {filteredImageUrls.map((img, index) => (
                 <CarouselItem
                   key={index}
-                  className="mr-2 flex max-w-fit items-center justify-center"
+                  className="mr-1 flex max-w-fit items-center justify-center"
                 >
                   <img
                     src={img}
                     alt={`Thumbnail ${index}`}
                     onClick={() => setSelectedIndex(index)}
-                    className={`h-[90px] ml-[5px] w-[90px] cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:h-[120px] md:w-[120px] ${
+                    className={`ml-1 h-[90px] w-[90px] cursor-pointer rounded-sm border-[2px] object-cover duration-200 select-none md:h-[130px] md:w-[130px] ${
                       selectedIndex === index
                         ? "border-o-primary"
                         : "border-secondary"

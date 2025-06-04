@@ -3,7 +3,7 @@ import ImageDetail from "@/components/locals/detail/img-detail";
 import InformationDetail from "@/components/locals/detail/Info-detail";
 import { sampleKeyboardData } from "@/constants/data/keyboard";
 import { KeyboardType } from "@/schemas/keyboardSchema";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFoundPage from "./not-found-page";
 import ReviewDetail from "@/components/locals/detail/review-detail";
@@ -31,15 +31,19 @@ function KeyboardDetailPage() {
   const overviewReviewData = sampleOverviewReviewData;
   const reviewData = sampleReviewProductData;
 
+  useEffect(() => {
+    setSelectedColor("");
+  }, [keyboardId]);
+
+  const handleColorChange = (color: string) => {
+    setSelectedColor(color);
+  };
+
   const breadcrumb = [
     { title: "Home", href: "/home" },
     { title: "Keyboards", href: "/keyboards" },
     { title: keyboard?.name ?? "" },
   ];
-
-  const handleColorChange = (color: string) => {
-    setSelectedColor(color);
-  };
 
   if (!keyboard) return <NotFoundPage />;
 
