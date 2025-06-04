@@ -11,27 +11,27 @@ export const sampleKeycapData: KeycapType[] = [
     description: "Bộ keycap phong cách cổ điển với profile CYL.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://omnitype.com/cdn/shop/products/gmk_klassiker_janev2ce_01_1100x.png?v=1691624488",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://omnitype.com/cdn/shop/files/image_1_1100x.png?v=1691624488",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://omnitype.com/cdn/shop/products/gmk_klassiker_no160_03_1100x.png?v=1691624488",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://omnitype.com/cdn/shop/products/gmk_klassiker_alice_03_1100x.png?v=1691618469",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://omnitype.com/cdn/shop/products/gmk_klassiker_kit_01_basis_1100x.png?v=1691618469",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://omnitype.com/cdn/shop/products/gmk_klassiker_kit_02_farben_1100x.png?v=1691618469",
         color: "",
       },
     ],
@@ -48,27 +48,27 @@ export const sampleKeycapData: KeycapType[] = [
       "Thiết kế nổi bật màu hồng cá tính dành cho người yêu phong cách anime.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Type_K_Frontal_590x.jpg?v=1727517440",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Type_K_CU_590x.jpg?v=1727517440",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Type_K_590x.jpg?v=1727517439",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Keycult_No2_65_CU_590x.jpg?v=1727517440",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://oblotzky.industries/cdn/shop/files/CYL_Darling_Keycult_No2_65_590x.jpg?v=1727517440",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://oblotzky.industries/cdn/shop/files/gmk_cyl_darling_r2_kit_01_latin_base_590x.jpg?v=1727517792",
         color: "",
       },
     ],
@@ -84,27 +84,27 @@ export const sampleKeycapData: KeycapType[] = [
     description: "GMK nổi tiếng với phối màu OLIVIA dịu dàng, sang trọng.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-1710245908860.jpg?v=1710245928277",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-2-1710245596202.jpg?v=1710245928277",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-3-1710245596922.jpg?v=1710245928277",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-4-1710245597689.jpg?v=1710245928277",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-5-1710245598369.jpg?v=1710245928277",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://bizweb.dktcdn.net/thumb/1024x1024/100/484/752/products/gmk-cyl-oliviano3-13-1710245603342.jpg?v=1710245928277",
         color: "",
       },
     ],
@@ -120,27 +120,27 @@ export const sampleKeycapData: KeycapType[] = [
     description: "Màu xanh baby huyền thoại, nhẹ nhàng nhưng đầy cá tính.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://dailyclack.com/cdn/shop/products/DolphinwithShoko_700x.jpg?v=1597022284",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://dailyclack.com/cdn/shop/products/Arctic-Doppelg_nger_700x.jpg?v=1597022529",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://dailyclack.com/cdn/shop/products/Office-Iron165-2_700x.jpg?v=1597022529",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://dailyclack.com/cdn/shop/products/base.427_700x.png?v=1597022475",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://dailyclack.com/cdn/shop/products/ShokoPics1_700x.jpg?v=1597114432",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://dailyclack.com/cdn/shop/products/ShokoPics2_700x.jpg?v=1597114432",
         color: "",
       },
     ],
@@ -156,27 +156,27 @@ export const sampleKeycapData: KeycapType[] = [
     description: "Thiết kế tối giản đầy tinh tế với phối màu cổ điển.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Classic_TKL_Wide_700x.png?v=1738883076",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Classic_Hiney_Ibis_Wide_700x.png?v=1738883076",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Classic_TGR_Alice_CU_700x.png?v=1738883076",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Classic_TGR_Alice_Wide_700x.png?v=1738883076",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Classic_TKL_CU_700x.png?v=1738883076",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://dailyclack.com/cdn/shop/files/GMK_CYL_Motif_Keycult_No2-65_CU_700x.png?v=1738883076",
         color: "",
       },
     ],
@@ -192,27 +192,27 @@ export const sampleKeycapData: KeycapType[] = [
     description: "Tone xanh hoàng gia mạnh mẽ và nam tính.",
     images: [
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/74a32930-8611-4a5f-b0df-55f0bbb1e8c8_rw_1920.jpg?h=a2701a83053f5f5400d8f7c567a690df",
+        img: "https://www.gmk.net/shop/media/74/4f/f6/1744194384/GMK%20Prussian%20Blue_RippleTKL_View03.jpg?ts=1744194384",
         color: "#121063",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/91377b4d-1050-442c-8d35-5ca949d649c5_rw_1920.jpg?h=609136326ba2c2a208f3c81e1764d322",
+        img: "https://www.gmk.net/shop/media/66/b2/e5/1744194384/GMK_Prussian_Blue_Base_Kit_labeled_20241205.png?ts=1744194384",
         color: "#3ab7bf",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/99c86da9-bcee-486b-aed6-f05137bc8c40_rw_1920.jpg?h=3d5882774efe4103e946cbb4cf0d6a36",
+        img: "https://i.shgcdn.com/3c3809d0-06f8-4f0e-ab35-e7957ccfaf6e/-/format/auto/-/quality/best/",
         color: "#78dcca",
       },
       {
-        img: "https://cdn.myportfolio.com/44c2fc27-a1ba-4d7f-80ab-886a492e5ba9/56009a14-34f0-48f9-9685-0d9c72e5839b_rw_1920.jpg?h=93e0b771e53eedba2058dee96dfa0196",
+        img: "https://i.shgcdn.com/b5c9db6d-42ed-42d9-a5e5-648af105f070/-/format/auto/-/quality/best/",
         color: "",
       },
       {
-        img: "https://bizweb.dktcdn.net/100/499/624/files/z5334484187220-e279ef04d013bb6b608d19db6cefb5b9.jpg?v=1717513061778",
+        img: "https://prototypist.net/cdn/shop/files/CYL_Phantom_Daji_Wide_grande.png?v=1705062504",
         color: "",
       },
       {
-        img: "https://preview.redd.it/geonworks-f1-8x-722-v0-iyp1n2gfunaa1.jpg?width=640&crop=smart&auto=webp&s=21b875f7011398ca28b7612397aa0fa77fa15aa9",
+        img: "https://novelkeys.com/cdn/shop/files/GMK_CYL_PhantomR2_TILE_1200x.jpg?v=1718801450",
         color: "",
       },
     ],
